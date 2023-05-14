@@ -1,9 +1,13 @@
 package Models;
 
-public abstract class ArcObject {
-     private String id;
+import java.sql.Date;
 
-    /* TOASK que carajo le pasa al modelo conceptual?*/
-    private float  alto,largo,ancho,espesor;
+public abstract class ArcObject {
+     private String id, name,description,origin,extractionType;
+
+    private float  lenght,height,witdth, weight;
+    int amount;
+    Date dateFound;
+
 
 }
