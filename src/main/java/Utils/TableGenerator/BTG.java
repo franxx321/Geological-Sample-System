@@ -15,6 +15,7 @@ public class BTG  extends TableGenerator {
         this.setResult(this.getQuery().executeQuery("SELECT * FROM  Cajas"));
         DefaultTableModel ret = this.resultToTable(this.getResult());
         title="Las cajas actualmente cargadas son:";
+        this.getConn().close();
         return ret;
     }
 }

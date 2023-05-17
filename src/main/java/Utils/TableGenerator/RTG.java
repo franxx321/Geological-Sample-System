@@ -12,6 +12,7 @@ public class RTG  extends TableGenerator{
         this.setResult(this.getQuery().executeQuery("SELECT * FROM  Personas"));
         DefaultTableModel ret = this.resultToTable(this.getResult());
         title="Las Personas actualmente cargadas son:";
+        this.getConn().close();
         return ret;
     }
 }

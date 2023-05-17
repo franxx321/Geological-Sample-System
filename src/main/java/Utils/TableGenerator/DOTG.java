@@ -12,12 +12,16 @@ public class DOTG extends TableGenerator {
 
     @Override
     public DefaultTableModel generateTable(String title, List<Object> atributes)throws SQLException {
+        DefaultTableModel ret;
         Date initialDate=(Date)atributes.get(0),finalDate=(Date)atributes.get(1);
+        String statement= "SELECT O_Cod, O_Nombre FROM Objetos WHERE O_Fecharegisto> ? AND O_Fecharegistro < ?";
         this.startConn();
-        this.setQuery(this.getConn().createStatement());
-
-
-
-        return null;
+        this.setP_query(this.getConn().prepareStatement(statement));
+        this.getP_query().setDate(1,initialDate);
+        this.getP_query().setDate(2,finalDate);
+        this.setResult(this.getP_query().executeQuery());
+        ret= this.resultToTable(this.getResult());
+        this.getConn().close();
+        return ret;
     }
 }

@@ -8,9 +8,11 @@ public class EBTG extends TableGenerator {
 
     @Override
     public DefaultTableModel generateTable(String title, List<Object> atributes) throws SQLException {
+        //TODO cambiar todo
         this.startConn();
         this.setQuery(this.getConn().createStatement());
         this.setResult(this.getQuery().executeQuery("SELECT * FROM  Cajas"));
+        this.getConn().close();
         return null;
     }
 
