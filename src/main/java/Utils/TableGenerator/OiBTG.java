@@ -11,9 +11,14 @@ public class OiBTG extends TableGenerator {
     public DefaultTableModel generateTable(String title, List<Object> atributes) throws SQLException {
         //TOASK que siginifica obtener el detalle
         String B_Code =(String)atributes.get(0);
-        String statement="SELECT ";
+        String statement="SELECT * FROM Objetos WHERE Ca_Cod_Contiene = ?";
         this.startConn();
-        return null;
+        this.setP_query(this.getConn().prepareStatement(statement));
+        this.setResult(this.getQuery().executeQuery(B_Code));
+        DefaultTableModel ret = this.resultToTable(this.getResult());
+        this.getConn().close();
+        title = "Los objetos cargados en la caja "+ B_Code+" son: ";
+        return ret;
     }
 
 

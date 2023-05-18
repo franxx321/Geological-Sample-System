@@ -11,9 +11,11 @@ public class EBTG extends TableGenerator {
         //TODO cambiar todo
         this.startConn();
         this.setQuery(this.getConn().createStatement());
-        this.setResult(this.getQuery().executeQuery("SELECT * FROM  Cajas"));
+        this.setResult(this.getQuery().executeQuery("SELECT Ca_Cod, Ca_Lugar FROM  Cajas WHERE Ca_Cod NOT IN(SELECT DISTINCT Ca_Cod_Contiene FROM Objetos)"));
+        DefaultTableModel ret =this.resultToTable(this.getResult());
         this.getConn().close();
-        return null;
+        title="Las Cajas Vacias son: ";
+        return ret;
     }
 
     /*CDESC Empty Box Table Geneator , Implements Table Generator.

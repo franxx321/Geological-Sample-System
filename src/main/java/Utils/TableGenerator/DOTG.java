@@ -22,6 +22,7 @@ public class DOTG extends TableGenerator {
         this.setResult(this.getP_query().executeQuery());
         ret= this.resultToTable(this.getResult());
         this.getConn().close();
+        title="Los objetos encontrados entre "+initialDate.toString()+" y " + finalDate.toString() + " son: ";
         return ret;
     }
 }
