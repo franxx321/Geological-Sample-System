@@ -4,6 +4,13 @@
  */
 package guiComponents;
 
+import Utils.ArithmeticResultGenerator.ArithmeticResultGenerator;
+import Utils.ArithmeticResultGenerator.DBSRG;
+import Utils.ArithmeticResultGenerator.OTARG;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Objects;
+
 /**
  *
  * @author joako
@@ -16,6 +23,28 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
     public ArithmeticDisplayer() {
         initComponents();
     }
+    
+    public void display(List <Objects> atributes, ArithmeticResultGenerator arithmeticResultGenerator)throws SQLException{
+        this.removeAll();
+        List<Object> atr;
+        atr = arithmeticResultGenerator.generateResults();
+        if(arithmeticResultGenerator instanceof DBSRG){
+            this.add(this.dbaddedPanel);
+            amountOfPeopleResult.setText((String)atr.get(0));
+            amountOfCuadrantsResult.setText((String)atr.get(1));
+            amountOfObjectsResult.setText((String)atr.get(2));
+            amountOfBoxesResult.setText((String)atr.get(3));
+        }else if(arithmeticResultGenerator instanceof OTARG){
+            this.add(this.amountObjectsPanel);
+            ceramicObjectsResult.setText((String)atr.get(0));
+            lithicObjectsResult.setText((String)atr.get(1));
+        }else{
+            this.add(this.statisticsPanel);
+            averageResult.setText((String)atr.get(0));
+            minResult.setText((String)atr.get(1));
+            maxResult.setText((String)atr.get(2));
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,17 +55,224 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        dbaddedPanel = new javax.swing.JPanel();
+        amountOfPeopleT = new javax.swing.JLabel();
+        amountOfCuadrantT = new javax.swing.JLabel();
+        amountOfObjectsT = new javax.swing.JLabel();
+        amountOfBoxesT = new javax.swing.JLabel();
+        amountOfPeopleResult = new javax.swing.JLabel();
+        amountOfCuadrantsResult = new javax.swing.JLabel();
+        amountOfObjectsResult = new javax.swing.JLabel();
+        amountOfBoxesResult = new javax.swing.JLabel();
+        amountObjectsPanel = new javax.swing.JPanel();
+        amountCeramicObjetsT = new javax.swing.JLabel();
+        amountLithicObjectsT = new javax.swing.JLabel();
+        ceramicObjectsResult = new javax.swing.JLabel();
+        lithicObjectsResult = new javax.swing.JLabel();
+        statisticsPanel = new javax.swing.JPanel();
+        titleStatistics = new javax.swing.JLabel();
+        averageWeighT = new javax.swing.JLabel();
+        maxWeighT = new javax.swing.JLabel();
+        minWeighT = new javax.swing.JLabel();
+        averageResult = new javax.swing.JLabel();
+        maxResult = new javax.swing.JLabel();
+        minResult = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(720, 1240));
+
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setLayout(new java.awt.CardLayout());
+
+        dbaddedPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        amountOfPeopleT.setText("Cantidad de Personas:");
+
+        amountOfCuadrantT.setText("Cantidad de Cuadriculas:");
+
+        amountOfObjectsT.setText("Cantidad de Objetos:");
+
+        amountOfBoxesT.setText("Cantidad de Cajas:");
+
+        amountOfPeopleResult.setText("jLabel5");
+
+        amountOfCuadrantsResult.setText("jLabel6");
+
+        amountOfObjectsResult.setText("jLabel7");
+
+        amountOfBoxesResult.setText("jLabel8");
+
+        javax.swing.GroupLayout dbaddedPanelLayout = new javax.swing.GroupLayout(dbaddedPanel);
+        dbaddedPanel.setLayout(dbaddedPanelLayout);
+        dbaddedPanelLayout.setHorizontalGroup(
+            dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dbaddedPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(amountOfPeopleT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(amountOfCuadrantT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(amountOfObjectsT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(amountOfBoxesT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(amountOfPeopleResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(amountOfCuadrantsResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(amountOfObjectsResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(amountOfBoxesResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(534, Short.MAX_VALUE))
+        );
+        dbaddedPanelLayout.setVerticalGroup(
+            dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dbaddedPanelLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amountOfPeopleT)
+                    .addComponent(amountOfPeopleResult))
+                .addGap(18, 18, 18)
+                .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amountOfCuadrantT)
+                    .addComponent(amountOfCuadrantsResult))
+                .addGap(18, 18, 18)
+                .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amountOfObjectsT)
+                    .addComponent(amountOfObjectsResult))
+                .addGap(18, 18, 18)
+                .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amountOfBoxesT)
+                    .addComponent(amountOfBoxesResult))
+                .addContainerGap(1023, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(dbaddedPanel, "card4");
+
+        amountObjectsPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        amountCeramicObjetsT.setText("Cantidad de Objetos Ceramicos:");
+
+        amountLithicObjectsT.setText("Cantidad de Objetos Liticos:");
+
+        ceramicObjectsResult.setText("jLabel2");
+
+        lithicObjectsResult.setText("jLabel3");
+
+        javax.swing.GroupLayout amountObjectsPanelLayout = new javax.swing.GroupLayout(amountObjectsPanel);
+        amountObjectsPanel.setLayout(amountObjectsPanelLayout);
+        amountObjectsPanelLayout.setHorizontalGroup(
+            amountObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(amountObjectsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(amountObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(amountCeramicObjetsT, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
+                    .addComponent(amountLithicObjectsT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(amountObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ceramicObjectsResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lithicObjectsResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        amountObjectsPanelLayout.setVerticalGroup(
+            amountObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(amountObjectsPanelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(amountObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amountCeramicObjetsT)
+                    .addComponent(ceramicObjectsResult))
+                .addGap(28, 28, 28)
+                .addGroup(amountObjectsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(amountLithicObjectsT)
+                    .addComponent(lithicObjectsResult))
+                .addContainerGap(1069, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(amountObjectsPanel, "card3");
+
+        statisticsPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        titleStatistics.setText("Estadisticas de los objetos");
+
+        averageWeighT.setText("Peso promedio:");
+
+        maxWeighT.setText("Peso Maximo:");
+
+        minWeighT.setText("Peso Minimo:");
+
+        averageResult.setText("jLabel1");
+
+        maxResult.setText("jLabel2");
+
+        minResult.setText("jLabel3");
+
+        javax.swing.GroupLayout statisticsPanelLayout = new javax.swing.GroupLayout(statisticsPanel);
+        statisticsPanel.setLayout(statisticsPanelLayout);
+        statisticsPanelLayout.setHorizontalGroup(
+            statisticsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(statisticsPanelLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(titleStatistics, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(statisticsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(statisticsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(minWeighT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(maxWeighT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(averageWeighT, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 93, Short.MAX_VALUE))
+                .addGap(32, 32, 32)
+                .addGroup(statisticsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(averageResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(maxResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(minResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(249, 552, Short.MAX_VALUE))
+        );
+        statisticsPanelLayout.setVerticalGroup(
+            statisticsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(statisticsPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titleStatistics)
+                .addGap(28, 28, 28)
+                .addGroup(statisticsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(averageWeighT)
+                    .addComponent(averageResult))
+                .addGap(38, 38, 38)
+                .addGroup(statisticsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(maxWeighT)
+                    .addComponent(maxResult))
+                .addGap(37, 37, 37)
+                .addGroup(statisticsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(minWeighT)
+                    .addComponent(minResult))
+                .addContainerGap(996, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(statisticsPanel, "card2");
+
+        jPanel2.setBackground(new java.awt.Color(102, 0, 204));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 65, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -78,5 +314,29 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel amountCeramicObjetsT;
+    private javax.swing.JLabel amountLithicObjectsT;
+    private javax.swing.JPanel amountObjectsPanel;
+    private javax.swing.JLabel amountOfBoxesResult;
+    private javax.swing.JLabel amountOfBoxesT;
+    private javax.swing.JLabel amountOfCuadrantT;
+    private javax.swing.JLabel amountOfCuadrantsResult;
+    private javax.swing.JLabel amountOfObjectsResult;
+    private javax.swing.JLabel amountOfObjectsT;
+    private javax.swing.JLabel amountOfPeopleResult;
+    private javax.swing.JLabel amountOfPeopleT;
+    private javax.swing.JLabel averageResult;
+    private javax.swing.JLabel averageWeighT;
+    private javax.swing.JLabel ceramicObjectsResult;
+    private javax.swing.JPanel dbaddedPanel;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel lithicObjectsResult;
+    private javax.swing.JLabel maxResult;
+    private javax.swing.JLabel maxWeighT;
+    private javax.swing.JLabel minResult;
+    private javax.swing.JLabel minWeighT;
+    private javax.swing.JPanel statisticsPanel;
+    private javax.swing.JLabel titleStatistics;
     // End of variables declaration//GEN-END:variables
 }
