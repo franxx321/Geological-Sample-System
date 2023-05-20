@@ -1,21 +1,13 @@
 package Utils.TableGenerator;
 
+import Utils.DBConnector;
+
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 import java.util.List;
 import java.util.Vector;
 
-public abstract class  TableGenerator {
-
-    private static final String DB_NAME = "TPL2";
-    private static final String DB_URL = "jdbc:mysql://localhost:3306/" + DB_NAME;
-    private static final String DB_USER = "prueba";
-    private static final String DB_PWD = "admin";
-
-    private /*static*/ Connection conn = null;
-    private /*static*/ Statement query = null;
-    private /*static*/ PreparedStatement p_query = null;
-    private /*static*/ ResultSet result = null;
+public abstract class  TableGenerator extends DBConnector {
 
     public abstract DefaultTableModel generateTable(String title, List<Object> atributes) throws SQLException;
 
@@ -43,41 +35,5 @@ public abstract class  TableGenerator {
         }
 
         return new DefaultTableModel(data, columnNames);
-    };
-
-    public  Connection getConn() {
-        return conn;
-    }
-
-    public void setConn(Connection conn) {
-        this.conn = conn;
-    }
-
-    public void startConn()throws SQLException{
-        this.conn=DriverManager.getConnection(DB_URL, DB_USER, DB_PWD);
-    }
-
-    public  Statement getQuery() {
-        return query;
-    }
-
-    public  void setQuery(Statement query) {
-        this.query = query;
-    }
-
-    public  PreparedStatement getP_query() {
-        return p_query;
-    }
-
-    public  void setP_query(PreparedStatement p_query) {
-        this.p_query = p_query;
-    }
-
-    public  ResultSet getResult() {
-        return result;
-    }
-
-    public void setResult(ResultSet result) {
-        this.result = result;
     }
 }
