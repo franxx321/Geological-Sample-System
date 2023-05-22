@@ -5,12 +5,22 @@
 package guiComponents;
 //import 
 
+import Models.ArcObject;
+import Models.CeramicObject;
+import Models.LithicObject;
+import Utils.EntityHandlers.ArcObjectHandler;
+import java.sql.Date;
+import java.sql.SQLException;
+
+
+
 /**
  *
  * @author franc
  */
 public class ObjectAdder extends javax.swing.JFrame {
-   // private
+    private ArcObjectHandler objectHandler;
+    
 
     /**
      * Creates new form ObjectAdder
@@ -31,6 +41,37 @@ public class ObjectAdder extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        oCodeField = new javax.swing.JTextField();
+        oNameField = new javax.swing.JTextField();
+        oHeightField = new javax.swing.JTextField();
+        oLenghtField = new javax.swing.JTextField();
+        oWidthField = new javax.swing.JTextField();
+        oWeightLabel = new javax.swing.JTextField();
+        oAmountField = new javax.swing.JTextField();
+        oDateFoundField = new javax.swing.JTextField();
+        oDescriptionField = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        oQuadrantCodeField = new javax.swing.JTextField();
+        oPersonDNIField = new javax.swing.JTextField();
+        oBoxCodeField = new javax.swing.JTextField();
+        oExtractionField = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        tipoLabel = new javax.swing.JLabel();
+        tipoComboBox = new javax.swing.JComboBox<>();
+        fechaC_ColorLabel = new javax.swing.JLabel();
+        FechaC_ColorField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -41,21 +82,172 @@ public class ObjectAdder extends javax.swing.JFrame {
 
         jLabel1.setText("Ingrese los campos requeridos");
 
+        jLabel2.setText("Codigo de Objeto");
+
+        jLabel3.setText("Nombre de Objeto");
+
+        jLabel4.setText("Alto");
+
+        jLabel5.setText("Largo");
+
+        jLabel6.setText("Espesor");
+
+        jLabel7.setText("Peso");
+
+        jLabel8.setText("Tipo de Extraccion");
+
+        jLabel9.setText("Cantidad");
+
+        jLabel10.setText("Fecha de registro");
+
+        jLabel11.setText("Descripcion");
+
+        oCodeField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oCodeFieldActionPerformed(evt);
+            }
+        });
+
+        jLabel12.setText("Codigo de Cuadricula");
+
+        jLabel13.setText("DNI Persona");
+
+        jLabel14.setText("Codigo de Caja");
+
+        jButton1.setText("Confirmar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        tipoLabel.setText("Tipo ");
+
+        tipoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Litico", "Ceramico" }));
+        tipoComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tipoComboBoxActionPerformed(evt);
+            }
+        });
+
+        fechaC_ColorLabel.setText("Fecha Creacion");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addComponent(jLabel1)
-                .addContainerGap(566, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10)
+                            .addComponent(jLabel11))
+                        .addGap(81, 81, 81)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(oNameField)
+                                .addComponent(oHeightField)
+                                .addComponent(oCodeField))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(oDescriptionField, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(oDateFoundField, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(oAmountField, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(oLenghtField, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(oWidthField, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(oWeightLabel, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(oExtractionField, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGap(70, 70, 70)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(tipoLabel)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel14)
+                            .addComponent(fechaC_ColorLabel))
+                        .addGap(34, 34, 34)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FechaC_ColorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(oBoxCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(oPersonDNIField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(oQuadrantCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(tipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jButton1)))))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel1)
-                .addContainerGap(477, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(oCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12)
+                            .addComponent(oQuadrantCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(oNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel13)
+                            .addComponent(oPersonDNIField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(oHeightField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel14)
+                            .addComponent(oBoxCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(oLenghtField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tipoLabel)
+                            .addComponent(tipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel6)
+                            .addComponent(oWidthField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(fechaC_ColorLabel)
+                            .addComponent(FechaC_ColorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel7)
+                            .addComponent(oWeightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel8))
+                    .addComponent(oExtractionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(oAmountField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(oDateFoundField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(oDescriptionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
@@ -88,6 +280,69 @@ public class ObjectAdder extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void oCodeFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oCodeFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_oCodeFieldActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void tipoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoComboBoxActionPerformed
+        // TODO add your handling code here:
+        if (((String)tipoComboBox.getSelectedItem()).equals("Litico")){
+            fechaC_ColorLabel.setText("Fecha Creacion");
+        }
+        else{
+            fechaC_ColorLabel.setText("Color");
+        }
+    }//GEN-LAST:event_tipoComboBoxActionPerformed
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        // TODO add your handling code here:
+        try{
+         ArcObject newObject;
+        
+        if (((String)tipoComboBox.getSelectedItem()).equals("Litico")){
+            newObject= new LithicObject();
+            newObject.setId(this.oCodeField.getText());
+            newObject.setName(this.oNameField.getText());
+            newObject.setLenght(Float.parseFloat(this.oLenghtField.getText()));
+            newObject.setHeight(Float.parseFloat(this.oHeightField.getText()));
+            newObject.setWitdth(Float.parseFloat(this.oWidthField.getText()));
+            newObject.setWeight(Float.parseFloat(this.oWidthField.getText()));
+            newObject.setExtractionType(this.oExtractionField.getText());
+            newObject.setAmount(Integer.parseInt(this.oAmountField.getText()));
+            newObject.setDateFound(Date.valueOf(this.oDateFoundField.getText()));
+            newObject.setDescription(this.oDescriptionField.getText());
+            newObject.setrId(this.oPersonDNIField.getText());
+            newObject.setqId(this.oQuadrantCodeField.getText());
+            ((LithicObject)newObject).setCreationDate(Date.valueOf(this.FechaC_ColorField.getText()));
+            
+            
+            
+        }
+        else{
+            newObject= new CeramicObject();
+            newObject.setId(this.oCodeField.getText());
+            newObject.setName(this.oNameField.getText());
+            newObject.setLenght(Float.parseFloat(this.oLenghtField.getText()));
+            newObject.setHeight(Float.parseFloat(this.oHeightField.getText()));
+            newObject.setWitdth(Float.parseFloat(this.oWidthField.getText()));
+            newObject.setWeight(Float.parseFloat(this.oWidthField.getText()));
+            newObject.setExtractionType(this.oExtractionField.getText());
+            newObject.setAmount(Integer.parseInt(this.oAmountField.getText()));
+            newObject.setDateFound(Date.valueOf(this.oDateFoundField.getText()));
+            newObject.setDescription(this.oDescriptionField.getText());
+            newObject.setrId(this.oPersonDNIField.getText());
+            newObject.setqId(this.oQuadrantCodeField.getText());
+            ((CeramicObject)newObject).setColor(this.FechaC_ColorField.getText());            
+        }
+        this.objectHandler.addObject(newObject);
+        }
+        catch (SQLException e){}
+    }//GEN-LAST:event_jButton1MousePressed
 
     /**
      * @param args the command line arguments
@@ -125,9 +380,40 @@ public class ObjectAdder extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField FechaC_ColorField;
+    private javax.swing.JLabel fechaC_ColorLabel;
+    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField oAmountField;
+    private javax.swing.JTextField oBoxCodeField;
+    private javax.swing.JTextField oCodeField;
+    private javax.swing.JTextField oDateFoundField;
+    private javax.swing.JTextField oDescriptionField;
+    private javax.swing.JTextField oExtractionField;
+    private javax.swing.JTextField oHeightField;
+    private javax.swing.JTextField oLenghtField;
+    private javax.swing.JTextField oNameField;
+    private javax.swing.JTextField oPersonDNIField;
+    private javax.swing.JTextField oQuadrantCodeField;
+    private javax.swing.JTextField oWeightLabel;
+    private javax.swing.JTextField oWidthField;
+    private javax.swing.JComboBox<String> tipoComboBox;
+    private javax.swing.JLabel tipoLabel;
     // End of variables declaration//GEN-END:variables
 }
