@@ -4,7 +4,9 @@
  */
 package Utils.EntityHandlers;
 
+import Utils.DBConnector;
 import java.util.HashMap;
+import java.util.List;
 import javax.swing.JFrame;
 
 /**
@@ -24,12 +26,13 @@ public class GUIHandler {
     
     
     
-    public void changeFrame(String nextFrame){
+    public void changeFrame(String nextFrame, DBConnector dBconnector, List<Object> atributes){
         this.currentFrame.setVisible(false);
         this.currentFrame= frames.get(nextFrame);
         this.currentFrame.setVisible(true);
         this.currentFrame.repaint();
         this.currentFrame.revalidate();
+        
     }
     
 }

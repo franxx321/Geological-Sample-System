@@ -24,12 +24,15 @@ public class TableDisplayer extends javax.swing.JFrame {
     }
     
     public void display(List<Object> atributes, TableGenerator tableGenerator)throws SQLException{
-        String title="";
+        try {String title="";
         DefaultTableModel tableModel = tableGenerator.generateTable(title, atributes);
         this.titlelabel.setText(title);
         this.table.setModel(tableModel);
         this.repaint();
-        this.revalidate();
+        this.revalidate();}
+        catch(SQLException e){
+            
+        }
     }
     
 
