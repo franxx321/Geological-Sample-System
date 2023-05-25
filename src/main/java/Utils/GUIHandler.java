@@ -2,11 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Utils.EntityHandlers;
+package Utils;
 
-import Utils.DBConnector;
 import java.util.HashMap;
-import java.util.List;
 import javax.swing.JFrame;
 
 /**
@@ -26,13 +24,12 @@ public class GUIHandler {
     
     
     
-    public void changeFrame(String nextFrame, DBConnector dBconnector, List<Object> atributes){
+    public void changeFrame(String nextFrame){
         this.currentFrame.setVisible(false);
         this.currentFrame= frames.get(nextFrame);
         this.currentFrame.setVisible(true);
         this.currentFrame.repaint();
         this.currentFrame.revalidate();
-        
     }
     
 }

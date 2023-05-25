@@ -4,7 +4,7 @@
  */
 package guiComponents;
 
-import Utils.BoxHandler;
+import Utils.EntityHandlers.BoxHandler;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;

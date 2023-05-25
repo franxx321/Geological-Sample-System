@@ -23,7 +23,7 @@ public class TableDisplayer extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void display(List<Object> atributes, TableGenerator tableGenerator)throws SQLException{
+    public void display(List<Object> atributes, TableGenerator tableGenerator){
         try {String title="";
         DefaultTableModel tableModel = tableGenerator.generateTable(title, atributes);
         this.titlelabel.setText(title);

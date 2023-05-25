@@ -6,6 +6,7 @@ package guiComponents;
 
 import Utils.TableGenerator.DOTG;
 import java.sql.Date;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
@@ -138,6 +139,8 @@ public class DOTP extends javax.swing.JFrame {
         dates.add(0,Date.valueOf(this.initialDateField.getText()));
         dates.add(1,Date.valueOf(this.finalDateField.getText()));
         this.tableDisplayer.display(dates, tablegenerator);
+        
+       
         
     }//GEN-LAST:event_okButtonMousePressed
 

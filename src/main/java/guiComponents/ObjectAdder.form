@@ -83,23 +83,19 @@
                               <Component id="jLabel11" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="oNameField" max="32767" attributes="0"/>
-                                  <Component id="oHeightField" max="32767" attributes="0"/>
-                                  <Component id="oCodeField" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="oDescriptionField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="oDateFoundField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="oAmountField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="oLenghtField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="oWidthField" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="oWeightLabel" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="oExtractionField" alignment="0" max="32767" attributes="0"/>
-                              </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="oDescriptionField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="oDateFoundField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="oAmountField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="oWidthField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="oWeightLabel" alignment="0" max="32767" attributes="0"/>
+                              <Component id="oExtractionField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="oCodeField" pref="97" max="32767" attributes="0"/>
+                              <Component id="oNameField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="oHeightField" alignment="0" max="32767" attributes="0"/>
+                              <Component id="oLenghtField" alignment="0" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="53" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="tipoLabel" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabel12" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -108,17 +104,17 @@
                               <Component id="fechaC_ColorLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="FechaC_ColorField" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="oBoxCodeField" min="-2" max="-2" attributes="0"/>
-                                      <Component id="oPersonDNIField" min="-2" max="-2" attributes="0"/>
-                                      <Component id="oQuadrantCodeField" min="-2" max="-2" attributes="0"/>
-                                      <Component id="tipoComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="tipoComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="oBoxCodeField" alignment="0" pref="97" max="32767" attributes="0"/>
+                                      <Component id="oPersonDNIField" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="oQuadrantCodeField" alignment="0" max="32767" attributes="0"/>
                                   </Group>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="FechaC_ColorField" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>

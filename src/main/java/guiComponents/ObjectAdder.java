@@ -27,6 +27,7 @@ public class ObjectAdder extends javax.swing.JFrame {
      */
     public ObjectAdder() {
         initComponents();
+        this.objectHandler=new ArcObjectHandler();
     }
 
     /**
@@ -158,20 +159,18 @@ public class ObjectAdder extends javax.swing.JFrame {
                             .addComponent(jLabel10)
                             .addComponent(jLabel11))
                         .addGap(81, 81, 81)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(oNameField)
-                                .addComponent(oHeightField)
-                                .addComponent(oCodeField))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(oDescriptionField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(oDateFoundField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(oAmountField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(oLenghtField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(oWidthField, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(oWeightLabel, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(oExtractionField, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addGap(70, 70, 70)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(oDescriptionField)
+                            .addComponent(oDateFoundField)
+                            .addComponent(oAmountField)
+                            .addComponent(oWidthField)
+                            .addComponent(oWeightLabel)
+                            .addComponent(oExtractionField)
+                            .addComponent(oCodeField, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(oNameField)
+                            .addComponent(oHeightField)
+                            .addComponent(oLenghtField))
+                        .addGap(53, 53, 53)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tipoLabel)
                             .addComponent(jLabel12)
@@ -179,15 +178,15 @@ public class ObjectAdder extends javax.swing.JFrame {
                             .addComponent(jLabel14)
                             .addComponent(fechaC_ColorLabel))
                         .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FechaC_ColorField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(oBoxCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(oPersonDNIField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(oQuadrantCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(tipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jButton1)))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(oBoxCodeField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                                    .addComponent(oPersonDNIField, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(oQuadrantCodeField, javax.swing.GroupLayout.Alignment.LEADING)))
+                            .addComponent(jButton1)
+                            .addComponent(FechaC_ColorField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(219, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -319,9 +318,6 @@ public class ObjectAdder extends javax.swing.JFrame {
             newObject.setrId(this.oPersonDNIField.getText());
             newObject.setqId(this.oQuadrantCodeField.getText());
             ((LithicObject)newObject).setCreationDate(Date.valueOf(this.FechaC_ColorField.getText()));
-            
-            
-            
         }
         else{
             newObject= new CeramicObject();
@@ -369,6 +365,7 @@ public class ObjectAdder extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(ObjectAdder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
