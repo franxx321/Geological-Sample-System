@@ -56,6 +56,7 @@ public class Menu extends javax.swing.JFrame {
         deleteBotton = new javax.swing.JButton();
         addBotton = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        BackToMenu1 = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -67,6 +68,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        BackToMenu2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,10 +91,8 @@ public class Menu extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenido al sistema del departamento de arqueologia");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Por favor eliga una opcion:");
 
         operationsBotton.setText("Operaciones");
@@ -140,7 +140,7 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(10, 10, 10)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(operationsBotton)
                     .addComponent(consultaBotton))
                 .addContainerGap(394, Short.MAX_VALUE))
@@ -169,8 +169,19 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Elija una operacion:");
+
+        BackToMenu1.setText("Volver al Menu");
+        BackToMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BackToMenu1MousePressed(evt);
+            }
+        });
+        BackToMenu1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackToMenu1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -178,12 +189,17 @@ public class Menu extends javax.swing.JFrame {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(83, 83, 83)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(deleteBotton)
-                    .addComponent(jLabel3))
-                .addGap(18, 18, 18)
-                .addComponent(addBotton)
-                .addContainerGap(454, Short.MAX_VALUE))
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(deleteBotton)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addComponent(addBotton))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(BackToMenu1)))
+                .addContainerGap(475, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -194,7 +210,9 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(addBotton)
                     .addComponent(deleteBotton))
-                .addContainerGap(398, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 322, Short.MAX_VALUE)
+                .addComponent(BackToMenu1)
+                .addGap(60, 60, 60))
         );
 
         jPanel1.add(jPanel4, "card3");
@@ -202,10 +220,8 @@ public class Menu extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Elija una consulta");
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Consultar cajas");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -213,7 +229,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Consultar personas");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -221,10 +236,8 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Consultar los objetos en una caja");
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Consultar cajas vacias");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -232,7 +245,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Consultar cantidad de objetos hallados por cada arqueologo");
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -240,7 +252,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Consultar el peso de cada caja");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -248,7 +259,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Consultar estadisticas del peso de los objetos");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -256,7 +266,6 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Consultar cantidad de objetos liticos y ceramicos");
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -264,11 +273,17 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Consultar estadisticas del sistema");
         jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel13MousePressed(evt);
+            }
+        });
+
+        BackToMenu2.setText("Volver al menu");
+        BackToMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BackToMenu2MousePressed(evt);
             }
         });
 
@@ -289,7 +304,8 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addComponent(jLabel5)
                             .addComponent(jLabel12)
-                            .addComponent(jLabel13)))
+                            .addComponent(jLabel13)
+                            .addComponent(BackToMenu2)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(333, 333, 333)
                         .addComponent(jLabel4)))
@@ -318,7 +334,9 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel13)
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(BackToMenu2)
+                .addGap(34, 34, 34))
         );
 
         jPanel1.add(jPanel5, "card4");
@@ -400,7 +418,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void operationsBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_operationsBottonMousePressed
        this.jPanel1.removeAll();
-        this.jPanel1.add(this.jPanel4);
+       this.jPanel1.add(this.jPanel4);
        this.jPanel1.repaint();
        this.jPanel1.revalidate();
     }//GEN-LAST:event_operationsBottonMousePressed
@@ -419,6 +437,25 @@ public class Menu extends javax.swing.JFrame {
     private void addBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBottonMousePressed
         this.guiHandler.changeFrame(GUIHandler.objectAdder);
     }//GEN-LAST:event_addBottonMousePressed
+
+    private void BackToMenu1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToMenu1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackToMenu1ActionPerformed
+
+    private void BackToMenu1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToMenu1MousePressed
+        this.jPanel1.removeAll();
+        this.jPanel1.add(this.jPanel3);
+        this.jPanel1.repaint();
+        this.jPanel1.revalidate();
+                                
+    }//GEN-LAST:event_BackToMenu1MousePressed
+
+    private void BackToMenu2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToMenu2MousePressed
+        this.jPanel1.removeAll();
+        this.jPanel1.add(this.jPanel3);
+        this.jPanel1.repaint();
+        this.jPanel1.revalidate();
+    }//GEN-LAST:event_BackToMenu2MousePressed
 
     /**
      * @param args the command line arguments
@@ -456,6 +493,8 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackToMenu1;
+    private javax.swing.JButton BackToMenu2;
     private javax.swing.JButton addBotton;
     private javax.swing.JButton consultaBotton;
     private javax.swing.JButton deleteBotton;
