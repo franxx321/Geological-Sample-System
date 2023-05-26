@@ -4,7 +4,7 @@ import java.sql.*;
 
 public abstract class DBConnector {
 
-    private static final String DB_NAME = "TPL2";
+    private static final String DB_NAME = "tpl2";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/" + DB_NAME;
     private static final String DB_USER = "prueba";
     private static final String DB_PWD = "Holamundo1";

@@ -15,6 +15,7 @@ import Utils.TableGenerator.EBTG;
 import Utils.TableGenerator.ROATG;
 import Utils.TableGenerator.RTG;
 
+
 /**
  *
  * @author franc
@@ -325,7 +326,7 @@ public class Menu extends javax.swing.JFrame {
 
     private void jLabel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MousePressed
         // TODO add your handling code here:
-        ((TableDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new RTG());
+        ((guiComponents.TableDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new RTG());
         this.guiHandler.changeFrame(GUIHandler.tableDisplayer);
     }//GEN-LAST:event_jLabel6MousePressed
 
