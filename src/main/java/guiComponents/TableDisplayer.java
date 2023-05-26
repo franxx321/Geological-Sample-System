@@ -72,7 +72,6 @@ public class TableDisplayer extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
-        titlelabel.setForeground(new java.awt.Color(0, 0, 0));
         titlelabel.setText("Title");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

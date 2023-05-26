@@ -164,6 +164,7 @@ public class BoxDeleter extends javax.swing.JFrame {
 
     private void backToMenuBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenuBottonActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_backToMenuBottonActionPerformed
 
     private void backToMenuBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backToMenuBottonMousePressed
