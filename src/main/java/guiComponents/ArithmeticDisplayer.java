@@ -92,20 +92,28 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
 
         dbaddedPanel.setBackground(new java.awt.Color(255, 255, 255));
 
+        amountOfPeopleT.setForeground(new java.awt.Color(0, 0, 0));
         amountOfPeopleT.setText("Cantidad de Personas:");
 
+        amountOfCuadrantT.setForeground(new java.awt.Color(0, 0, 0));
         amountOfCuadrantT.setText("Cantidad de Cuadriculas:");
 
+        amountOfObjectsT.setForeground(new java.awt.Color(0, 0, 0));
         amountOfObjectsT.setText("Cantidad de Objetos:");
 
+        amountOfBoxesT.setForeground(new java.awt.Color(0, 0, 0));
         amountOfBoxesT.setText("Cantidad de Cajas:");
 
+        amountOfPeopleResult.setForeground(new java.awt.Color(0, 0, 0));
         amountOfPeopleResult.setText("jLabel5");
 
+        amountOfCuadrantsResult.setForeground(new java.awt.Color(0, 0, 0));
         amountOfCuadrantsResult.setText("jLabel6");
 
+        amountOfObjectsResult.setForeground(new java.awt.Color(0, 0, 0));
         amountOfObjectsResult.setText("jLabel7");
 
+        amountOfBoxesResult.setForeground(new java.awt.Color(0, 0, 0));
         amountOfBoxesResult.setText("jLabel8");
 
         javax.swing.GroupLayout dbaddedPanelLayout = new javax.swing.GroupLayout(dbaddedPanel);
@@ -277,7 +285,7 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

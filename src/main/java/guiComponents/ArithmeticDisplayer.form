@@ -32,7 +32,7 @@
           <Group type="102" alignment="1" attributes="0">
               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" pref="529" max="32767" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -112,41 +112,65 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="amountOfPeopleT">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de Personas:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfCuadrantT">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de Cuadriculas:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfObjectsT">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de Objetos:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfBoxesT">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de Cajas:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfPeopleResult">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel5"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfCuadrantsResult">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel6"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfObjectsResult">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel7"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfBoxesResult">
               <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="0" green="0" red="0" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel8"/>
               </Properties>
             </Component>

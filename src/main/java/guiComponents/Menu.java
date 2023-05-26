@@ -46,15 +46,15 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        operationsBotton = new javax.swing.JButton();
+        consultaBotton = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        deleteBotton = new javax.swing.JButton();
+        addBotton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -85,103 +85,126 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new java.awt.CardLayout());
 
-        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
-
-        jButton3.setText("Eliminar Cajas");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("Agregar Objetos");
-
-        jLabel3.setText("Elija una operacion");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addComponent(jButton3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton4)
-                .addGap(76, 76, 76))
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(337, 337, 337)
-                .addComponent(jLabel3)
-                .addGap(47, 336, Short.MAX_VALUE))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel3)
-                .addGap(173, 173, 173)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
-                .addContainerGap(244, Short.MAX_VALUE))
-        );
-
-        jPanel1.add(jPanel4, "card3");
-
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenido al sistema del departamento de arqueologia");
 
-        jLabel2.setText("Por favor eliga una opcion");
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setText("Por favor eliga una opcion:");
 
-        jButton2.setText("Operaciones");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        operationsBotton.setText("Operaciones");
+        operationsBotton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                operationsBottonMousePressed(evt);
+            }
+        });
+        operationsBotton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                operationsBottonActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Consultas");
+        consultaBotton.setText("Consultas");
+        consultaBotton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                consultaBottonMousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(167, 167, 167)
-                        .addComponent(jLabel1))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel2)))
+                        .addComponent(operationsBotton)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(consultaBotton)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(105, 105, 105)
-                .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(216, 216, 216))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(235, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(231, 231, 231))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(79, 79, 79)
+                .addGap(10, 10, 10)
                 .addComponent(jLabel2)
-                .addGap(119, 119, 119)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
-                .addContainerGap(219, Short.MAX_VALUE))
+                    .addComponent(operationsBotton)
+                    .addComponent(consultaBotton))
+                .addContainerGap(394, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, "card2");
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        deleteBotton.setText("Eliminar Cajas");
+        deleteBotton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                deleteBottonMousePressed(evt);
+            }
+        });
+        deleteBotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBottonActionPerformed(evt);
+            }
+        });
+
+        addBotton.setText("Agregar Objetos");
+        addBotton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                addBottonMousePressed(evt);
+            }
+        });
+
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setText("Elija una operacion:");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(83, 83, 83)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(deleteBotton)
+                    .addComponent(jLabel3))
+                .addGap(18, 18, 18)
+                .addComponent(addBotton)
+                .addContainerGap(454, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addBotton)
+                    .addComponent(deleteBotton))
+                .addContainerGap(398, Short.MAX_VALUE))
+        );
+
+        jPanel1.add(jPanel4, "card3");
+
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Elija una consulta");
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Consultar cajas");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -189,6 +212,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Consultar personas");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -196,8 +220,10 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Consultar los objetos en una caja");
 
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Consultar cajas vacias");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -205,6 +231,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Consultar cantidad de objetos hallados por cada arqueologo");
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -212,13 +239,15 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setText("Consultar  el peso de cada caja");
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Consultar el peso de cada caja");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel10MousePressed(evt);
             }
         });
 
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Consultar estadisticas del peso de los objetos");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -226,6 +255,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Consultar cantidad de objetos liticos y ceramicos");
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -233,6 +263,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Consultar estadisticas del sistema");
         jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -247,9 +278,6 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(366, 366, 366)
-                        .addComponent(jLabel4))
-                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
@@ -260,8 +288,11 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jLabel11)
                             .addComponent(jLabel5)
                             .addComponent(jLabel12)
-                            .addComponent(jLabel13))))
-                .addContainerGap(319, Short.MAX_VALUE))
+                            .addComponent(jLabel13)))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(333, 333, 333)
+                        .addComponent(jLabel4)))
+                .addContainerGap(347, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -276,7 +307,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel7)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel9)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
@@ -286,7 +317,7 @@ public class Menu extends javax.swing.JFrame {
                 .addComponent(jLabel12)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel13)
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(147, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel5, "card4");
@@ -309,13 +340,13 @@ public class Menu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void operationsBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_operationsBottonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_operationsBottonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void deleteBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBottonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_deleteBottonActionPerformed
 
     private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
         // TODO add your handling code here:
@@ -366,6 +397,28 @@ public class Menu extends javax.swing.JFrame {
         this.guiHandler.changeFrame(GUIHandler.arithmeticDisplayer);
     }//GEN-LAST:event_jLabel13MousePressed
 
+    private void operationsBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_operationsBottonMousePressed
+       this.removeAll();
+       this.add(this.jPanel4);
+       this.repaint();
+       this.revalidate();
+    }//GEN-LAST:event_operationsBottonMousePressed
+
+    private void consultaBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaBottonMousePressed
+        this.removeAll();
+        this.add(this.jPanel5);
+        this.repaint();
+        this.revalidate();
+    }//GEN-LAST:event_consultaBottonMousePressed
+
+    private void deleteBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteBottonMousePressed
+        this.guiHandler.changeFrame(GUIHandler.boxDeleter);
+    }//GEN-LAST:event_deleteBottonMousePressed
+
+    private void addBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addBottonMousePressed
+        this.guiHandler.changeFrame(GUIHandler.objectAdder);
+    }//GEN-LAST:event_addBottonMousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -402,10 +455,9 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton addBotton;
+    private javax.swing.JButton consultaBotton;
+    private javax.swing.JButton deleteBotton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -424,5 +476,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JButton operationsBotton;
     // End of variables declaration//GEN-END:variables
 }

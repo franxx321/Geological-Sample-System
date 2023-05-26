@@ -11,6 +11,8 @@ import Models.LithicObject;
 import Utils.EntityHandlers.ArcObjectHandler;
 import java.sql.Date;
 import java.sql.SQLException;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 
@@ -21,13 +23,14 @@ import java.sql.SQLException;
 public class ObjectAdder extends javax.swing.JFrame {
     private ArcObjectHandler objectHandler;
     
+    
 
     /**
      * Creates new form ObjectAdder
      */
     public ObjectAdder() {
         initComponents();
-        this.objectHandler=new ArcObjectHandler();
+        this.objectHandler = new ArcObjectHandler();
     }
 
     /**
@@ -81,26 +84,38 @@ public class ObjectAdder extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese los campos requeridos");
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Codigo de Objeto");
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre de Objeto");
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Alto");
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Largo");
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Espesor");
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Peso");
 
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Tipo de Extraccion");
 
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Cantidad");
 
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Fecha de registro");
 
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Descripcion");
 
         oCodeField.addActionListener(new java.awt.event.ActionListener() {
@@ -109,10 +124,13 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Codigo de Cuadricula");
 
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("DNI Persona");
 
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Codigo de Caja");
 
         jButton1.setText("Confirmar");
@@ -127,6 +145,7 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
+        tipoLabel.setForeground(new java.awt.Color(0, 0, 0));
         tipoLabel.setText("Tipo ");
 
         tipoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Litico", "Ceramico" }));
@@ -136,6 +155,7 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
+        fechaC_ColorLabel.setForeground(new java.awt.Color(0, 0, 0));
         fechaC_ColorLabel.setText("Fecha Creacion");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -229,7 +249,8 @@ public class ObjectAdder extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
-                            .addComponent(oWeightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(oWeightLabel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1))
                         .addGap(18, 18, 18)
                         .addComponent(jLabel8))
                     .addComponent(oExtractionField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -240,8 +261,7 @@ public class ObjectAdder extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
-                    .addComponent(oDateFoundField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
+                    .addComponent(oDateFoundField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel11)
@@ -337,7 +357,10 @@ public class ObjectAdder extends javax.swing.JFrame {
         }
         this.objectHandler.addObject(newObject);
         }
-        catch (SQLException e){}
+        catch (SQLException e){
+            JFrame jFrame = new JFrame();
+            JOptionPane.showMessageDialog(jFrame, "Ocurrio un error al intentar agregar un objeto.");
+        }
     }//GEN-LAST:event_jButton1MousePressed
 
     /**

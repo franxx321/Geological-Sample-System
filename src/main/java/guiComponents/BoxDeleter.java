@@ -4,7 +4,9 @@
  */
 package guiComponents;
 
+import Utils.ArithmeticResultGenerator.DBSRG;
 import Utils.EntityHandlers.BoxHandler;
+import Utils.GUIHandler;
 import java.sql.SQLException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -15,6 +17,7 @@ import javax.swing.JOptionPane;
  */
 public class BoxDeleter extends javax.swing.JFrame {
     private BoxHandler boxhandler;
+    private GUIHandler guihandler;
     
     /**
      * Creates new form BoxDeleater
@@ -36,14 +39,16 @@ public class BoxDeleter extends javax.swing.JFrame {
         deleaterTitle = new javax.swing.JLabel();
         codDeleater = new javax.swing.JTextField();
         confirmBotton = new javax.swing.JButton();
+        backToMenuBotton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        deleaterTitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         deleaterTitle.setForeground(new java.awt.Color(0, 0, 0));
-        deleaterTitle.setText("Ingrese el codigo de la caja que desea eliminar");
+        deleaterTitle.setText("Ingrese el codigo de la caja que desea eliminar:");
 
         codDeleater.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -63,6 +68,18 @@ public class BoxDeleter extends javax.swing.JFrame {
             }
         });
 
+        backToMenuBotton.setText("Volver al menu");
+        backToMenuBotton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                backToMenuBottonMousePressed(evt);
+            }
+        });
+        backToMenuBotton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backToMenuBottonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -74,17 +91,20 @@ public class BoxDeleter extends javax.swing.JFrame {
                     .addComponent(codDeleater))
                 .addGap(18, 18, 18)
                 .addComponent(confirmBotton)
-                .addContainerGap(397, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 250, Short.MAX_VALUE)
+                .addComponent(backToMenuBotton)
+                .addGap(27, 27, 27))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(deleaterTitle)
                 .addGap(18, 18, 18)
+                .addComponent(deleaterTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(codDeleater, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(confirmBotton))
+                    .addComponent(confirmBotton)
+                    .addComponent(backToMenuBotton))
                 .addContainerGap(485, Short.MAX_VALUE))
         );
 
@@ -129,18 +149,26 @@ public class BoxDeleter extends javax.swing.JFrame {
 
     private void confirmBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_confirmBottonMousePressed
         String cod = codDeleater.getText();
+        JFrame jFrame = new JFrame();
         try{
         int a = boxhandler.deleteBox(cod);
-        JFrame jFrame = new JFrame();
         if(a == -3){
             JOptionPane.showMessageDialog(jFrame, "La caja contiene objecto/s por lo cual no puede ser eliminada.");
         }else{
             JOptionPane.showMessageDialog(jFrame, "Elminacion realizada correctamente.");
         }
         }catch(SQLException e){
-            //TODO Show an error sign
+            JOptionPane.showMessageDialog(jFrame, "Ocurrio un error al intentar borrar una caja..");
         }
     }//GEN-LAST:event_confirmBottonMousePressed
+
+    private void backToMenuBottonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backToMenuBottonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_backToMenuBottonActionPerformed
+
+    private void backToMenuBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backToMenuBottonMousePressed
+        this.guihandler.changeFrame(GUIHandler.menu);
+    }//GEN-LAST:event_backToMenuBottonMousePressed
 
     /**
      * @param args the command line arguments
@@ -179,6 +207,7 @@ public class BoxDeleter extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton backToMenuBotton;
     private javax.swing.JTextField codDeleater;
     private javax.swing.JButton confirmBotton;
     private javax.swing.JLabel deleaterTitle;

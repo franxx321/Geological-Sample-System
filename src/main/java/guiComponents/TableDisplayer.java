@@ -7,6 +7,8 @@ package guiComponents;
 import Utils.TableGenerator.TableGenerator;
 import java.sql.SQLException;
 import java.util.List;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,14 +26,15 @@ public class TableDisplayer extends javax.swing.JFrame {
     }
     
     public void display(List<Object> atributes, TableGenerator tableGenerator){
-        try {String title="";
+        try {String title = "";
         DefaultTableModel tableModel = tableGenerator.generateTable(title, atributes);
         this.titlelabel.setText(title);
         this.table.setModel(tableModel);
         this.repaint();
         this.revalidate();}
         catch(SQLException e){
-            
+            JFrame jFrame = new JFrame();
+            JOptionPane.showMessageDialog(jFrame, "Ocurrio un error al mostrar la consulta.");
         }
     }
     
@@ -69,7 +72,8 @@ public class TableDisplayer extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
-        titlelabel.setText("Hola Mundo!!!");
+        titlelabel.setForeground(new java.awt.Color(0, 0, 0));
+        titlelabel.setText("Title");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -77,21 +81,21 @@ public class TableDisplayer extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 708, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(369, 369, 369)
+                .addGap(342, 342, 342)
                 .addComponent(titlelabel)
-                .addContainerGap(355, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addContainerGap()
                 .addComponent(titlelabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 514, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(47, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
