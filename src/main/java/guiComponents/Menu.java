@@ -33,6 +33,7 @@ public class Menu extends javax.swing.JFrame {
         initComponents();
         this.dbInitializer= new DBInitializer();
         this.dbInitializer.initializeDB();
+        this.guiHandler= new GUIHandler(this);
     }
 
     /**
@@ -398,17 +399,17 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel13MousePressed
 
     private void operationsBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_operationsBottonMousePressed
-       this.removeAll();
-       this.add(this.jPanel4);
-       this.repaint();
-       this.revalidate();
+       this.jPanel1.removeAll();
+        this.jPanel1.add(this.jPanel4);
+       this.jPanel1.repaint();
+       this.jPanel1.revalidate();
     }//GEN-LAST:event_operationsBottonMousePressed
 
     private void consultaBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_consultaBottonMousePressed
-        this.removeAll();
-        this.add(this.jPanel5);
-        this.repaint();
-        this.revalidate();
+        this.jPanel1.removeAll();
+        this.jPanel1.add(this.jPanel5);
+        this.jPanel1.repaint();
+        this.jPanel1.revalidate();
     }//GEN-LAST:event_consultaBottonMousePressed
 
     private void deleteBottonMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteBottonMousePressed
