@@ -4,18 +4,34 @@
  */
 package guiComponents;
 
+import Utils.ArithmeticResultGenerator.DBSRG;
+import Utils.ArithmeticResultGenerator.OTARG;
+import Utils.ArithmeticResultGenerator.WSRG;
+import Utils.DBInitializer;
+import Utils.GUIHandler;
+import Utils.TableGenerator.BTG;
+import Utils.TableGenerator.BWTG;
+import Utils.TableGenerator.EBTG;
+import Utils.TableGenerator.ROATG;
+import Utils.TableGenerator.RTG;
+
 /**
  *
  * @author franc
  */
 public class Menu extends javax.swing.JFrame {
-    private 
+    private GUIHandler guiHandler;
+    private DBInitializer dbInitializer;
+    
+     
 
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
+        this.dbInitializer= new DBInitializer();
+        this.dbInitializer.initializeDB();
     }
 
     /**
@@ -166,22 +182,62 @@ public class Menu extends javax.swing.JFrame {
         jLabel4.setText("Elija una consulta");
 
         jLabel5.setText("Consultar cajas");
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel5MousePressed(evt);
+            }
+        });
 
         jLabel6.setText("Consultar personas");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel6MousePressed(evt);
+            }
+        });
 
         jLabel7.setText("Consultar los objetos en una caja");
 
         jLabel8.setText("Consultar cajas vacias");
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel8MousePressed(evt);
+            }
+        });
 
         jLabel9.setText("Consultar cantidad de objetos hallados por cada arqueologo");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel9MousePressed(evt);
+            }
+        });
 
         jLabel10.setText("Consultar  el peso de cada caja");
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel10MousePressed(evt);
+            }
+        });
 
         jLabel11.setText("Consultar estadisticas del peso de los objetos");
+        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel11MousePressed(evt);
+            }
+        });
 
         jLabel12.setText("Consultar cantidad de objetos liticos y ceramicos");
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel12MousePressed(evt);
+            }
+        });
 
         jLabel13.setText("Consultar estadisticas del sistema");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel13MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -259,6 +315,55 @@ public class Menu extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jLabel5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MousePressed
+        // TODO add your handling code here:
+        ((TableDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new BTG());
+        this.guiHandler.changeFrame(GUIHandler.tableDisplayer);
+        
+    }//GEN-LAST:event_jLabel5MousePressed
+
+    private void jLabel6MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MousePressed
+        // TODO add your handling code here:
+        ((TableDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new RTG());
+        this.guiHandler.changeFrame(GUIHandler.tableDisplayer);
+    }//GEN-LAST:event_jLabel6MousePressed
+
+    private void jLabel8MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MousePressed
+        // TODO add your handling code here:
+        ((TableDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new EBTG());
+        this.guiHandler.changeFrame(GUIHandler.tableDisplayer);
+    }//GEN-LAST:event_jLabel8MousePressed
+
+    private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MousePressed
+        // TODO add your handling code here:
+        ((TableDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new ROATG());
+        this.guiHandler.changeFrame(GUIHandler.tableDisplayer);
+    }//GEN-LAST:event_jLabel9MousePressed
+
+    private void jLabel10MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MousePressed
+        // TODO add your handling code here:
+        ((TableDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new BWTG());
+        this.guiHandler.changeFrame(GUIHandler.tableDisplayer);
+    }//GEN-LAST:event_jLabel10MousePressed
+
+    private void jLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MousePressed
+        // TODO add your handling code here:
+        ((ArithmeticDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new WSRG());
+        this.guiHandler.changeFrame(GUIHandler.arithmeticDisplayer);
+    }//GEN-LAST:event_jLabel11MousePressed
+
+    private void jLabel12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MousePressed
+        // TODO add your handling code here:
+        ((ArithmeticDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new OTARG() );
+        this.guiHandler.changeFrame(GUIHandler.arithmeticDisplayer);
+    }//GEN-LAST:event_jLabel12MousePressed
+
+    private void jLabel13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MousePressed
+        // TODO add your handling code here:
+        ((ArithmeticDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new DBSRG());
+        this.guiHandler.changeFrame(GUIHandler.arithmeticDisplayer);
+    }//GEN-LAST:event_jLabel13MousePressed
 
     /**
      * @param args the command line arguments

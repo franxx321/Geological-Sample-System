@@ -11,7 +11,7 @@ public class WSRG extends ArithmeticResultGenerator {
      */
     @Override
     public List<Object> generateResults() throws SQLException {
-        ArrayList <Object> ret = new ArrayList<>();
+        try{ArrayList <Object> ret = new ArrayList<>();
         this.startConn();
         this.setQuery(this.getConn().createStatement());
         this.setResult(this.getQuery().executeQuery("SELECT AVG(O_Peso), MAX(O_Peso), MIN(O_Peso) FROM Objetos"));
@@ -23,7 +23,10 @@ public class WSRG extends ArithmeticResultGenerator {
         ret.add(1,min);
         ret.add(2,max);
         this.getConn().close();
-        return ret;
+        return ret;}
+        catch(SQLException e){
+          return null;  
+        }
     }
 }
 

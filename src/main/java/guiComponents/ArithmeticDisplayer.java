@@ -24,10 +24,13 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void display(List <Objects> atributes, ArithmeticResultGenerator arithmeticResultGenerator)throws SQLException{
+    public void display(List <Objects> atributes, ArithmeticResultGenerator arithmeticResultGenerator){
         this.removeAll();
         List<Object> atr;
-        atr = arithmeticResultGenerator.generateResults();
+        atr=null;
+        try{
+        atr = arithmeticResultGenerator.generateResults();}
+        catch(SQLException e){}
         if(arithmeticResultGenerator instanceof DBSRG){
             this.add(this.dbaddedPanel);
             amountOfPeopleResult.setText((String)atr.get(0));

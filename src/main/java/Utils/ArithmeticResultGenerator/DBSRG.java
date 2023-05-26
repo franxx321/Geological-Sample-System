@@ -16,6 +16,7 @@ public class DBSRG extends ArithmeticResultGenerator {
         String[] ids={"P_Dni","Cu_Cod","O_Cod","Ca_Cood"};
         String statement="SELECT COUNT(?) FROM ?";
         ArrayList <Object> ret = new ArrayList<>();
+        try{
         this.startConn();
         this.setP_query(this.getConn().prepareStatement(statement));
         for (int i=0;i<4;i++){
@@ -26,6 +27,9 @@ public class DBSRG extends ArithmeticResultGenerator {
             ret.add(i,this.getResult().getInt(1));
         }
         this.getConn().close();
+        }
+        catch(SQLException e){
+        }
         return ret;
     }
 }

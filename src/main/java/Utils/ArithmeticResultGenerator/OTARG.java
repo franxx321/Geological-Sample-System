@@ -13,6 +13,7 @@ public class OTARG extends ArithmeticResultGenerator{
     @Override
     public List<Object> generateResults() throws SQLException {
         ArrayList<Object> ret = new ArrayList<>();
+        try{
         this.startConn();
         this.setQuery(this.getConn().createStatement());
         this.setResult(this.getQuery().executeQuery("SELECT COUNT(O_Cod) FROM Liticos"));
@@ -24,7 +25,9 @@ public class OTARG extends ArithmeticResultGenerator{
         this.getResult().next();
         int cer = this.getResult().getInt(1);
         ret.add(1, cer);
-        this.getConn().close();
+        this.getConn().close();}
+        catch (SQLException e){
+        }
         return ret;
     }
 }

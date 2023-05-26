@@ -12,13 +12,16 @@ import javax.swing.JFrame;
  * @author franc
  */
 public class GUIHandler {
+    public final static String menu = "menu",boxDeleter= "boxdeleter",arithmeticDisplayer= "arithmeticdisplayer",objectAdder="objectadder",DOTP="DOTP",OiBTP="OIBTP",tableDisplayer="tableDisplayer";
+    
+    
     private HashMap<String,JFrame> frames;
     private JFrame currentFrame;
 
     public GUIHandler() {
         this.frames= new HashMap();
         //TODO cargar los Frames al hashmap, crear variables estaticas para acceder los hashmaps, asignar como currentFrame al frame del menu.
-        
+       
     }
     
     
@@ -31,5 +34,11 @@ public class GUIHandler {
         this.currentFrame.repaint();
         this.currentFrame.revalidate();
     }
+    
+    public JFrame getFrame(String frameName){
+        JFrame ret = this.frames.get(frameName);
+        return ret;
+    }
+    
     
 }

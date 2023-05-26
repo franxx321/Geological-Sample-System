@@ -7,7 +7,7 @@ public abstract class DBConnector {
     private static final String DB_NAME = "TPL2";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/" + DB_NAME;
     private static final String DB_USER = "prueba";
-    private static final String DB_PWD = "admin";
+    private static final String DB_PWD = "Holamundo1";
 
     private /*static*/ Connection conn = null;
     private /*static*/ Statement query = null;
@@ -22,7 +22,12 @@ public abstract class DBConnector {
     }
 
     public void startConn()throws SQLException {
-        this.conn=DriverManager.getConnection(DB_URL, DB_USER, DB_PWD);
+        try{
+        this.conn=DriverManager.getConnection(DB_URL, DB_USER, DB_PWD);}
+        catch(SQLException e){
+            System.out.println("Fallo!" + e.getMessage());
+        
+    }
     }
 
     public  Statement getQuery() {
