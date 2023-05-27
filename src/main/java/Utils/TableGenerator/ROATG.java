@@ -10,7 +10,11 @@ public class ROATG extends TableGenerator {
 
         this.startConn();
         this.setQuery(this.getConn().createStatement());
-        this.setResult(this.getQuery().executeQuery("SELECT P_Nombre, P_Apellido, COUNT(P_DNI_Ingresa) FROM  Personas, Objetos GROUP BY (P_DNI_Ingresa) ORDER BY P_Apellido"));
+        this.setResult(this.getQuery().executeQuery("SELECT P_Nombre, P_Apellido, COUNT(P_Dni_Ingresa) " +
+                "FROM  Personas p, Objetos o " +
+                "WHERE p.P_Dni = o.P_Dni_Ingresa " +
+                "GROUP BY (P_Dni_Ingresa) " +
+                "ORDER BY P_Apellido"));
         DefaultTableModel ret= this.resultToTable(this.getResult());
         this.getConn().close();
         title="Los Investigadores cargados, junto con la cantidad de objetos que encontraron son: ";

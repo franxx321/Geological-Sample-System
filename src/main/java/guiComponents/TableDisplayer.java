@@ -37,6 +37,7 @@ public class TableDisplayer extends javax.swing.JFrame {
         catch(SQLException e){
             JFrame jFrame = new JFrame();
             JOptionPane.showMessageDialog(jFrame, "Ocurrio un error al mostrar la consulta.");
+            System.out.println(e.getMessage());
         }
     }
     
