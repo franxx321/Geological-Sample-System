@@ -16,7 +16,16 @@ import java.util.ArrayList;
  * @author franc
  */
 public class DBInitializer extends DBConnector {
-    
+
+
+    private String correctDate(String statement){
+        String prefix = statement.substring(0,statement.indexOf('-')-2);
+        String day =statement.substring(statement.indexOf('-')-2,statement.indexOf('-'));
+        String month = statement.substring(statement.indexOf('-')+1,statement.indexOf('-')+3);
+        String year = statement.substring(statement.indexOf('-')+4,statement.indexOf('-')+8);
+        String suffix = statement.substring(statement.indexOf('-')+8);
+        return prefix+year+"-"+month+"-"+day+suffix;
+    }
     public void initializeDB(){
         ArrayList <String> instructions =new ArrayList();
         try{
@@ -25,10 +34,15 @@ public class DBInitializer extends DBConnector {
         FileReader fileReader = new FileReader(insertFile);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         while((auxString=bufferedReader.readLine())!=null){
-                if(auxString.contains("--Insert tabla Cajas")){
-                    System.out.println("Llegamos al punto de error");
-                }
-                if((!auxString.contains("--"))&&(!auxString.equals(""))){
+
+                if((!auxString.startsWith("--"))&&(!auxString.equals(""))){
+                    int a = auxString.indexOf('-');
+                    if(auxString.contains("--Insert Tabla Personas")){
+                        System.out.println("llegamos al problema");
+                    }
+                    if(a!=-1){
+                        auxString= this.correctDate(auxString);
+                    }
                     instructions.add(auxString);
                 }
         }
@@ -57,7 +71,8 @@ public class DBInitializer extends DBConnector {
                     + "P_Dni INTEGER NOT NULL PRIMARY KEY,"
                     + "P_Nombre VARCHAR(30) NOT NULL,"
                     + "P_Apellido VARCHAR(30) NOT NULL,"
-                    + "P_Email VARCHAR(30)"
+                    + "P_Email VARCHAR(30),"
+                    + "P_Telefono VARCHAR(30)"
                     + ")");
             this.setQuery(this.getConn().createStatement());
             this.getQuery().execute("CREATE TABLE IF NOT EXISTS Cajas("
@@ -75,12 +90,13 @@ public class DBInitializer extends DBConnector {
                     + "O_Espesor FLOAT,"
                     + "O_Peso FLOAT,"
                     + "O_Cantidad INTEGER,"
-                    + "O_Fecharegisto DATE,"
+                    + "O_Fecharegistro DATE,"
                     + "O_Descripcion VARCHAR(30),"
                     + "O_Origen VARCHAR(30),"
                     + "Cu_Cod_Asocia VARCHAR(30),"
                     + "Ca_Cod_Contiene VARCHAR(30),"
                     + "P_Dni_Ingresa INTEGER,"
+                    + "O_Es VARCHAR(1),"
                     + "FOREIGN KEY(P_Dni_Ingresa) REFERENCES Personas(P_Dni),"
                     + "FOREIGN KEY(Ca_Cod_Contiene)REFERENCES Cajas(Ca_Cod),"
                     + "FOREIGN KEY(Cu_Cod_Asocia)REFERENCES CUADRICULAS(Cu_Cod)"
