@@ -23,14 +23,13 @@ public class GUIHandler {
     public GUIHandler(Menu menu) {
         this.frames= new HashMap();
         this.currentFrame=menu;
-        //TODO cargar los Frames al hashmap, crear variables estaticas para acceder los hashmaps, asignar como currentFrame al frame del menu.
         this.frames.put(GUIHandler.menu ,menu);
-        this.frames.put(GUIHandler.tableDisplayer,new TableDisplayer());
-        this.frames.put(GUIHandler.arithmeticDisplayer,new ArithmeticDisplayer());
-        this.frames.put(GUIHandler.boxDeleter,new BoxDeleter());
-        this.frames.put(GUIHandler.objectAdder,new ObjectAdder());
-        this.frames.put(GUIHandler.DOTP,new DOTP());
-        this.frames.put(GUIHandler.OiBTP,new OiBTP());
+        this.frames.put(GUIHandler.tableDisplayer,new TableDisplayer(this));
+        this.frames.put(GUIHandler.arithmeticDisplayer,new ArithmeticDisplayer(this));
+        this.frames.put(GUIHandler.boxDeleter,new BoxDeleter(this));
+        this.frames.put(GUIHandler.objectAdder,new ObjectAdder(this));
+        this.frames.put(GUIHandler.DOTP,new DOTP(this));
+        this.frames.put(GUIHandler.OiBTP,new OiBTP(this));
     }
     
     
