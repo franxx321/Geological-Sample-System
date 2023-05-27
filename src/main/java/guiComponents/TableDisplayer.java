@@ -4,6 +4,7 @@
  */
 package guiComponents;
 
+import Utils.GUIHandler;
 import Utils.TableGenerator.TableGenerator;
 import java.sql.SQLException;
 import java.util.List;
@@ -17,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
  */
 public class TableDisplayer extends javax.swing.JFrame {
    
-
+    private GUIHandler guihandler;
     /**
      * Creates new form TableDisplayer
      */
@@ -53,6 +54,7 @@ public class TableDisplayer extends javax.swing.JFrame {
         table = new javax.swing.JTable();
         titlelabel = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(720, 1240));
@@ -72,7 +74,6 @@ public class TableDisplayer extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
-        titlelabel.setForeground(new java.awt.Color(0, 0, 0));
         titlelabel.setText("Title");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -100,15 +101,28 @@ public class TableDisplayer extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
 
+        jButton1.setText("Volver al Menu");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jButton1MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(50, 50, 50))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -128,6 +142,10 @@ public class TableDisplayer extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
+        this.guihandler.changeFrame(GUIHandler.menu);
+    }//GEN-LAST:event_jButton1MousePressed
 
     /**
      * @param args the command line arguments
@@ -164,6 +182,7 @@ public class TableDisplayer extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

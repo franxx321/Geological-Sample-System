@@ -8,6 +8,7 @@ import Utils.TableGenerator.DOTG;
 import java.sql.Date;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import Utils.GUIHandler;
 
 /**
  *
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 public class DOTP extends javax.swing.JFrame {
     TableDisplayer tableDisplayer;
     DOTG tablegenerator;
+    private GUIHandler guihandler;
 
     /**
      * Creates new form DOTP
@@ -34,6 +36,7 @@ public class DOTP extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        BackToMenuButton2 = new javax.swing.JToggleButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -45,23 +48,39 @@ public class DOTP extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(102, 0, 204));
 
+        BackToMenuButton2.setText("Volver al Menu");
+        BackToMenuButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BackToMenuButton2MousePressed(evt);
+            }
+        });
+        BackToMenuButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackToMenuButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BackToMenuButton2)
+                .addGap(21, 21, 21))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(BackToMenuButton2)
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese fecha inicial:");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ingrese fecha final:");
 
         initialDateField.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +160,14 @@ public class DOTP extends javax.swing.JFrame {
         this.tableDisplayer.display(dates, tablegenerator);
     }//GEN-LAST:event_okButtonMousePressed
 
+    private void BackToMenuButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToMenuButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackToMenuButton2ActionPerformed
+
+    private void BackToMenuButton2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToMenuButton2MousePressed
+       this.guihandler.changeFrame(GUIHandler.menu);
+    }//GEN-LAST:event_BackToMenuButton2MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -177,6 +204,7 @@ public class DOTP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton BackToMenuButton2;
     private javax.swing.JTextField finalDateField;
     private javax.swing.JTextField initialDateField;
     private javax.swing.JLabel jLabel1;

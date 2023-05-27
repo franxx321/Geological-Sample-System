@@ -4,12 +4,14 @@
  */
 package guiComponents;
 
+import Utils.GUIHandler;
+
 /**
  *
  * @author franc
  */
 public class OiBTP extends javax.swing.JFrame {
-
+    private GUIHandler guihandler;
     /**
      * Creates new form OiBTP
      */
@@ -28,6 +30,7 @@ public class OiBTP extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        BackToMenuButton5 = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
 
         jLabel1.setText("jLabel1");
@@ -36,15 +39,28 @@ public class OiBTP extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(102, 0, 204));
 
+        BackToMenuButton5.setText("Volver al Menu");
+        BackToMenuButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BackToMenuButton5MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BackToMenuButton5)
+                .addGap(63, 63, 63))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(BackToMenuButton5)
+                .addContainerGap())
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -53,7 +69,7 @@ public class OiBTP extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,6 +93,10 @@ public class OiBTP extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BackToMenuButton5MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToMenuButton5MousePressed
+        this.guihandler.changeFrame(GUIHandler.menu);
+    }//GEN-LAST:event_BackToMenuButton5MousePressed
 
     /**
      * @param args the command line arguments
@@ -114,6 +134,7 @@ public class OiBTP extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackToMenuButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

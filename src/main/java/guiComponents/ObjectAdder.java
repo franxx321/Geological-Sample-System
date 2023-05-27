@@ -9,6 +9,7 @@ import Models.ArcObject;
 import Models.CeramicObject;
 import Models.LithicObject;
 import Utils.EntityHandlers.ArcObjectHandler;
+import Utils.GUIHandler;
 import java.sql.Date;
 import java.sql.SQLException;
 import javax.swing.JFrame;
@@ -22,7 +23,7 @@ import javax.swing.JOptionPane;
  */
 public class ObjectAdder extends javax.swing.JFrame {
     private ArcObjectHandler objectHandler;
-    
+    private GUIHandler guihandler;
     
 
     /**
@@ -77,6 +78,7 @@ public class ObjectAdder extends javax.swing.JFrame {
         fechaC_ColorLabel = new javax.swing.JLabel();
         FechaC_ColorField = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
+        BackToMenuButton4 = new javax.swing.JButton();
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -85,37 +87,26 @@ public class ObjectAdder extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese los campos requeridos");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Codigo de Objeto");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre de Objeto");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Alto");
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Largo");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Espesor");
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Peso");
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Tipo de Extraccion");
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Cantidad");
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Fecha de registro");
 
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Descripcion");
 
         oCodeField.addActionListener(new java.awt.event.ActionListener() {
@@ -124,13 +115,10 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Codigo de Cuadricula");
 
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("DNI Persona");
 
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Codigo de Caja");
 
         jButton1.setText("Confirmar");
@@ -145,7 +133,6 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
-        tipoLabel.setForeground(new java.awt.Color(0, 0, 0));
         tipoLabel.setText("Tipo ");
 
         tipoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Litico", "Ceramico" }));
@@ -155,7 +142,6 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
-        fechaC_ColorLabel.setForeground(new java.awt.Color(0, 0, 0));
         fechaC_ColorLabel.setText("Fecha Creacion");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -271,15 +257,28 @@ public class ObjectAdder extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
 
+        BackToMenuButton4.setText("Volver al Menu");
+        BackToMenuButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BackToMenuButton4MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BackToMenuButton4)
+                .addGap(72, 72, 72))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(BackToMenuButton4)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -363,6 +362,10 @@ public class ObjectAdder extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1MousePressed
 
+    private void BackToMenuButton4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToMenuButton4MousePressed
+        this.guihandler.changeFrame(GUIHandler.menu);
+    }//GEN-LAST:event_BackToMenuButton4MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -400,6 +403,7 @@ public class ObjectAdder extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackToMenuButton4;
     private javax.swing.JTextField FechaC_ColorField;
     private javax.swing.JLabel fechaC_ColorLabel;
     private javax.swing.JButton jButton1;

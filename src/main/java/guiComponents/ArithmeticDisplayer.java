@@ -7,6 +7,7 @@ package guiComponents;
 import Utils.ArithmeticResultGenerator.ArithmeticResultGenerator;
 import Utils.ArithmeticResultGenerator.DBSRG;
 import Utils.ArithmeticResultGenerator.OTARG;
+import Utils.GUIHandler;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
@@ -16,7 +17,7 @@ import java.util.Objects;
  * @author joako
  */
 public class ArithmeticDisplayer extends javax.swing.JFrame {
-
+    private GUIHandler guihandler;
     /**
      * Creates new form ArithmeticDisplayer
      */
@@ -84,6 +85,7 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
         maxResult = new javax.swing.JLabel();
         minResult = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        BackToMenuButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -92,28 +94,20 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
 
         dbaddedPanel.setBackground(new java.awt.Color(255, 255, 255));
 
-        amountOfPeopleT.setForeground(new java.awt.Color(0, 0, 0));
         amountOfPeopleT.setText("Cantidad de Personas:");
 
-        amountOfCuadrantT.setForeground(new java.awt.Color(0, 0, 0));
         amountOfCuadrantT.setText("Cantidad de Cuadriculas:");
 
-        amountOfObjectsT.setForeground(new java.awt.Color(0, 0, 0));
         amountOfObjectsT.setText("Cantidad de Objetos:");
 
-        amountOfBoxesT.setForeground(new java.awt.Color(0, 0, 0));
         amountOfBoxesT.setText("Cantidad de Cajas:");
 
-        amountOfPeopleResult.setForeground(new java.awt.Color(0, 0, 0));
         amountOfPeopleResult.setText("jLabel5");
 
-        amountOfCuadrantsResult.setForeground(new java.awt.Color(0, 0, 0));
         amountOfCuadrantsResult.setText("jLabel6");
 
-        amountOfObjectsResult.setForeground(new java.awt.Color(0, 0, 0));
         amountOfObjectsResult.setText("jLabel7");
 
-        amountOfBoxesResult.setForeground(new java.awt.Color(0, 0, 0));
         amountOfBoxesResult.setText("jLabel8");
 
         javax.swing.GroupLayout dbaddedPanelLayout = new javax.swing.GroupLayout(dbaddedPanel);
@@ -129,11 +123,15 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
                     .addComponent(amountOfBoxesT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(amountOfPeopleResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(amountOfCuadrantsResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(amountOfObjectsResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(amountOfBoxesResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(614, Short.MAX_VALUE))
+                    .addGroup(dbaddedPanelLayout.createSequentialGroup()
+                        .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(amountOfPeopleResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(amountOfCuadrantsResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(amountOfBoxesResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(614, Short.MAX_VALUE))
+                    .addGroup(dbaddedPanelLayout.createSequentialGroup()
+                        .addComponent(amountOfObjectsResult, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         dbaddedPanelLayout.setVerticalGroup(
             dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,11 +148,11 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
                 .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(amountOfObjectsT)
                     .addComponent(amountOfObjectsResult))
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
                 .addGroup(dbaddedPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(amountOfBoxesT)
                     .addComponent(amountOfBoxesResult))
-                .addContainerGap(383, Short.MAX_VALUE))
+                .addContainerGap(379, Short.MAX_VALUE))
         );
 
         jPanel1.add(dbaddedPanel, "card4");
@@ -262,15 +260,33 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
 
+        BackToMenuButton3.setText("Volver al Menu");
+        BackToMenuButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                BackToMenuButton3MousePressed(evt);
+            }
+        });
+        BackToMenuButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackToMenuButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BackToMenuButton3)
+                .addGap(38, 38, 38))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 65, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(BackToMenuButton3)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -290,6 +306,14 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BackToMenuButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToMenuButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BackToMenuButton3ActionPerformed
+
+    private void BackToMenuButton3MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToMenuButton3MousePressed
+        this.guihandler.changeFrame(GUIHandler.menu);
+    }//GEN-LAST:event_BackToMenuButton3MousePressed
 
     /**
      * @param args the command line arguments
@@ -327,6 +351,7 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BackToMenuButton3;
     private javax.swing.JLabel amountCeramicObjetsT;
     private javax.swing.JLabel amountLithicObjectsT;
     private javax.swing.JPanel amountObjectsPanel;
