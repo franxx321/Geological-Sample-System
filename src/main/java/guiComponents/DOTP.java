@@ -15,8 +15,6 @@ import Utils.GUIHandler;
  * @author franc
  */
 public class DOTP extends javax.swing.JFrame {
-    TableDisplayer tableDisplayer;
-    DOTG tablegenerator;
     private GUIHandler guihandler;
 
     /**
@@ -44,6 +42,7 @@ public class DOTP extends javax.swing.JFrame {
         initialDateField = new javax.swing.JTextField();
         finalDateField = new javax.swing.JTextField();
         okButton = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -97,6 +96,8 @@ public class DOTP extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("*Formato de fecha aaaa-mm-dd");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -112,13 +113,16 @@ public class DOTP extends javax.swing.JFrame {
                         .addGap(53, 53, 53)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(initialDateField, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(finalDateField, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(508, Short.MAX_VALUE))
+                            .addComponent(finalDateField, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel3))))
+                .addContainerGap(376, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(25, 25, 25)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(initialDateField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -158,7 +162,8 @@ public class DOTP extends javax.swing.JFrame {
         ArrayList<Object> dates= new ArrayList();
         dates.add(0,Date.valueOf(this.initialDateField.getText()));
         dates.add(1,Date.valueOf(this.finalDateField.getText()));
-        this.tableDisplayer.display(dates, tablegenerator);
+        ((TableDisplayer)this.guihandler.getFrame(GUIHandler.tableDisplayer)).display(dates, new DOTG());
+        
     }//GEN-LAST:event_okButtonMousePressed
 
     private void BackToMenuButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToMenuButton2ActionPerformed
@@ -180,6 +185,7 @@ public class DOTP extends javax.swing.JFrame {
     private javax.swing.JTextField initialDateField;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JButton okButton;

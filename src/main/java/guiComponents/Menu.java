@@ -400,19 +400,19 @@ public class Menu extends javax.swing.JFrame {
 
     private void jLabel11MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MousePressed
         // TODO add your handling code here:
-        ((ArithmeticDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new WSRG());
+        ((ArithmeticDisplayer)this.guiHandler.getFrame(GUIHandler.arithmeticDisplayer)).display(null,new WSRG());
         this.guiHandler.changeFrame(GUIHandler.arithmeticDisplayer);
     }//GEN-LAST:event_jLabel11MousePressed
 
     private void jLabel12MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MousePressed
         // TODO add your handling code here:
-        ((ArithmeticDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new OTARG() );
+        ((ArithmeticDisplayer)this.guiHandler.getFrame(GUIHandler.arithmeticDisplayer)).display(null,new OTARG() );
         this.guiHandler.changeFrame(GUIHandler.arithmeticDisplayer);
     }//GEN-LAST:event_jLabel12MousePressed
 
     private void jLabel13MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MousePressed
         // TODO add your handling code here:
-        ((ArithmeticDisplayer)this.guiHandler.getFrame(GUIHandler.tableDisplayer)).display(null,new DBSRG());
+        ((ArithmeticDisplayer)this.guiHandler.getFrame(GUIHandler.arithmeticDisplayer)).display(null,new DBSRG());
         this.guiHandler.changeFrame(GUIHandler.arithmeticDisplayer);
     }//GEN-LAST:event_jLabel13MousePressed
 
