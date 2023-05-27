@@ -8,53 +8,54 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.sql.Array;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
  * @author franc
  */
 public class DBInitializer extends DBConnector {
 
 
-    private String correctDate(String statement){
-        String prefix = statement.substring(0,statement.indexOf('-')-2);
-        String day =statement.substring(statement.indexOf('-')-2,statement.indexOf('-'));
-        String month = statement.substring(statement.indexOf('-')+1,statement.indexOf('-')+3);
-        String year = statement.substring(statement.indexOf('-')+4,statement.indexOf('-')+8);
-        String suffix = statement.substring(statement.indexOf('-')+8);
-        return prefix+year+"-"+month+"-"+day+suffix;
+    private String correctDate(String statement) {
+        String prefix = statement.substring(0, statement.indexOf('-') - 2);
+        String day = statement.substring(statement.indexOf('-') - 2, statement.indexOf('-'));
+        String month = statement.substring(statement.indexOf('-') + 1, statement.indexOf('-') + 3);
+        String year = statement.substring(statement.indexOf('-') + 4, statement.indexOf('-') + 8);
+        String suffix = statement.substring(statement.indexOf('-') + 8);
+        return prefix + year + "-" + month + "-" + day + suffix;
     }
-    public void initializeDB(){
-        ArrayList <String> instructions =new ArrayList();
-        try{
-        String auxString;
-        File insertFile= new File("textfiles\\insert.txt");
-        FileReader fileReader = new FileReader(insertFile);
-        BufferedReader bufferedReader = new BufferedReader(fileReader);
-        while((auxString=bufferedReader.readLine())!=null){
 
-                if((!auxString.startsWith("--"))&&(!auxString.equals(""))){
+    public void initializeDB() {
+        ArrayList<String> instructions = new ArrayList();
+        try {
+            String auxString;
+            File insertFile = new File("textfiles\\insert.txt");
+            FileReader fileReader = new FileReader(insertFile);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            while ((auxString = bufferedReader.readLine()) != null) {
+
+                if ((!auxString.startsWith("--")) && (!auxString.equals(""))) {
                     int a = auxString.indexOf('-');
-                    if(auxString.contains("--Insert Tabla Personas")){
+                    if (auxString.contains("--Insert Tabla Personas")) {
                         System.out.println("llegamos al problema");
                     }
-                    if(a!=-1){
-                        auxString= this.correctDate(auxString);
+                    if (a != -1) {
+                        auxString = this.correctDate(auxString);
                     }
                     instructions.add(auxString);
                 }
+            }
+        } catch (IOException e) {
+            System.out.println("Fallo leida de archivo" + e.getMessage());
+
         }
-        }
-        catch(IOException e){
-            System.out.println("Fallo leida de archivo" +e.getMessage());
-        
-        }
-        
-        
-        try{
+
+
+        try {
             this.startConn();
+
             this.setQuery(this.getConn().createStatement());
             this.getQuery().execute("CREATE TABLE IF NOT EXISTS Sitios("
                     + "S_Cod VARCHAR(30) NOT NULL PRIMARY KEY,"
@@ -71,7 +72,7 @@ public class DBInitializer extends DBConnector {
                     + "P_Dni INTEGER NOT NULL PRIMARY KEY,"
                     + "P_Nombre VARCHAR(30) NOT NULL,"
                     + "P_Apellido VARCHAR(30) NOT NULL,"
-                    + "P_Email VARCHAR(30),"
+                    + "P_Email VARCHAR(45),"
                     + "P_Telefono VARCHAR(30)"
                     + ")");
             this.setQuery(this.getConn().createStatement());
@@ -114,16 +115,48 @@ public class DBInitializer extends DBConnector {
                     + "C_Color VARCHAR(30),"
                     + "FOREIGN KEY(O_Cod) REFERENCES Objetos(O_Cod)"
                     + ")");
-            for(String statement: instructions){
+
+
+            this.setQuery(this.getConn().createStatement());
+            this.setResult(this.getQuery().executeQuery("SELECT COUNT(O_Cod) FROM Objetos WHERE O_Cod = 'OBJ1'"));
+            this.getResult().next();
+            int b = this.getResult().getInt(1);
+            if (b == 0) {
+                for (String statement : instructions) {
+                    this.setQuery(this.getConn().createStatement());
+                    this.getQuery().execute(statement);
+                }
                 this.setQuery(this.getConn().createStatement());
-                this.getQuery().execute(statement);
+                this.getQuery().execute("INSERT INTO Personas  (P_Nombre ,P_Apellido,P_Email,P_Dni,P_Telefono ) " +
+                        "VALUES('Rodolphe','Rominov','rrominov@sciencedaily.com',25544555,'7135986253')");
+
+                this.setQuery(this.getConn().createStatement());
+                this.setResult(this.getQuery().executeQuery("SELECT P_Dni " +
+                        "FROM Personas " +
+                        "WHERE P_Nombre ='Benji' AND P_Apellido ='Colchett'"));
+                this.getResult().next();
+                String p_Dni = this.getResult().getString(1);
+                //TOASK dejamos esta opcion o no eliminamos al Benji este
+               /* this.setQuery(this.getConn().createStatement());
+                this.setResult(this.getQuery().executeQuery("SELECT O_Cod " +
+                        "FROM Objetos " +
+                        "WHERE P_Dni_Ingresa = p_Dni"));
+                while (this.getResult().next()){
+                    this.setP_query(this.getConn().prepareStatement("DELETE FROM Objetos " +
+                            "WHERE O_Cod = ?"));
+                    this.getP_query().setString(1,this.getResult().getString(1));
+                }*/
+                this.setP_query(this.getConn().prepareStatement("DELETE FROM Personas " +
+                        "WHERE P_Dni= ?"));
+                this.getP_query().setString(1, p_Dni);
+                this.getP_query().executeUpdate();
+
             }
-            
-        }
-        catch(SQLException e){
-            System.out.println("Falllo!"+e.getMessage());
-            
+            this.getConn().close();
+        } catch (SQLException e) {
+            System.out.println("Falllo!" + e.getMessage());
+
         }
     }
-    
+
 }
