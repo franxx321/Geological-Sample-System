@@ -32,7 +32,7 @@ public class Menu extends javax.swing.JFrame {
     public Menu() {
         initComponents();
         this.dbInitializer= new DBInitializer();
-        this.dbInitializer.initializeDB();
+            this.dbInitializer.initializeDB();
         this.guiHandler= new GUIHandler(this);
     }
 

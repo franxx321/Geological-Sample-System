@@ -21,10 +21,13 @@ public class DBInitializer extends DBConnector {
         ArrayList <String> instructions =new ArrayList();
         try{
         String auxString;
-        File insertFile= new File("TPL2\\textfiles\\insert.txt");
+        File insertFile= new File("textfiles\\insert.txt");
         FileReader fileReader = new FileReader(insertFile);
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         while((auxString=bufferedReader.readLine())!=null){
+                if(auxString.contains("--Insert tabla Cajas")){
+                    System.out.println("Llegamos al punto de error");
+                }
                 if((!auxString.contains("--"))&&(!auxString.equals(""))){
                     instructions.add(auxString);
                 }
@@ -86,7 +89,7 @@ public class DBInitializer extends DBConnector {
             this.setQuery(this.getConn().createStatement());
             this.getQuery().execute("CREATE TABLE IF NOT EXISTS Liticos ("
                     + "O_Cod VARCHAR(30) NOT NULL PRIMARY KEY,"
-                    + "L_FechaCreacion DATE,"
+                    + "L_FechaCreacion INTEGER,"
                     + "FOREIGN KEY(O_Cod) REFERENCES Objetos(O_Cod)"
                     + ")");
             this.setQuery(this.getConn().createStatement());
