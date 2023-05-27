@@ -4,15 +4,41 @@
  */
 package Utils;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  *
  * @author franc
  */
-public class DBInitializer extends DBConnector{
+public class DBInitializer extends DBConnector {
     
     public void initializeDB(){
+        ArrayList <String> instructions =new ArrayList();
+        try{
+        String auxString;
+        File insertFile= new File("textfiles\\insert.txt");
+        FileReader fileReader = new FileReader(insertFile);
+        BufferedReader bufferedReader = new BufferedReader(fileReader);
+        while((auxString=bufferedReader.readLine())!=null){
+                if(auxString.contains("--Insert tabla Cajas")){
+                    System.out.println("Llegamos al punto de error");
+                }
+                if((!auxString.contains("--"))&&(!auxString.equals(""))){
+                    instructions.add(auxString);
+                }
+        }
+        }
+        catch(IOException e){
+            System.out.println("Fallo leida de archivo" +e.getMessage());
+        
+        }
+        
+        
         try{
             this.startConn();
             this.setQuery(this.getConn().createStatement());
@@ -63,7 +89,7 @@ public class DBInitializer extends DBConnector{
             this.setQuery(this.getConn().createStatement());
             this.getQuery().execute("CREATE TABLE IF NOT EXISTS Liticos ("
                     + "O_Cod VARCHAR(30) NOT NULL PRIMARY KEY,"
-                    + "L_FechaCreacion DATE,"
+                    + "L_FechaCreacion INTEGER,"
                     + "FOREIGN KEY(O_Cod) REFERENCES Objetos(O_Cod)"
                     + ")");
             this.setQuery(this.getConn().createStatement());
@@ -72,9 +98,11 @@ public class DBInitializer extends DBConnector{
                     + "C_Color VARCHAR(30),"
                     + "FOREIGN KEY(O_Cod) REFERENCES Objetos(O_Cod)"
                     + ")");
-
-
-
+            for(String statement: instructions){
+                this.setQuery(this.getConn().createStatement());
+                this.getQuery().execute(statement);
+            }
+            
         }
         catch(SQLException e){
             System.out.println("Falllo!"+e.getMessage());
