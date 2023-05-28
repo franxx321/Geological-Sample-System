@@ -135,7 +135,7 @@ public class OiBTP extends javax.swing.JFrame {
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         // TODO add your handling code here:
         ArrayList <Object> atributes = new ArrayList();
-        atributes.add(0, Date.valueOf(this.jTextField1.getText()));
+        atributes.add(0, (this.jTextField1.getText()));
         ((TableDisplayer)this.guihandler.getFrame(GUIHandler.tableDisplayer)).display(atributes, new OiBTG());
         this.guihandler.changeFrame(GUIHandler.tableDisplayer);
     }//GEN-LAST:event_jButton1MousePressed

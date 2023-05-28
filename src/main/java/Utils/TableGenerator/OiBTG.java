@@ -14,7 +14,8 @@ public class OiBTG extends TableGenerator {
         String statement="SELECT * FROM Objetos WHERE Ca_Cod_Contiene = ?";
         this.startConn();
         this.setP_query(this.getConn().prepareStatement(statement));
-        this.setResult(this.getQuery().executeQuery(B_Code));
+        this.getP_query().setString(1,(String)atributes.get(0));
+        this.setResult(this.getP_query().executeQuery());
         DefaultTableModel ret = this.resultToTable(this.getResult());
         this.getConn().close();
         title = "Los objetos cargados en la caja "+ B_Code+" son: ";
