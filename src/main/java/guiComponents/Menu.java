@@ -237,6 +237,11 @@ public class Menu extends javax.swing.JFrame {
         });
 
         jLabel7.setText("Consultar los objetos en una caja");
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel7MousePressed(evt);
+            }
+        });
 
         jLabel8.setText("Consultar cajas vacias");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -456,6 +461,11 @@ public class Menu extends javax.swing.JFrame {
         this.jPanel1.repaint();
         this.jPanel1.revalidate();
     }//GEN-LAST:event_BackToMenu2MousePressed
+
+    private void jLabel7MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MousePressed
+        // TODO add your handling code here:
+        this.guiHandler.changeFrame(GUIHandler.OiBTP);
+    }//GEN-LAST:event_jLabel7MousePressed
 
     /**
      * @param args the command line arguments
