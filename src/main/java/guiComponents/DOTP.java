@@ -163,6 +163,7 @@ public class DOTP extends javax.swing.JFrame {
         dates.add(0,Date.valueOf(this.initialDateField.getText()));
         dates.add(1,Date.valueOf(this.finalDateField.getText()));
         ((TableDisplayer)this.guihandler.getFrame(GUIHandler.tableDisplayer)).display(dates, new DOTG());
+        this.guihandler.changeFrame(GUIHandler.tableDisplayer);
         
     }//GEN-LAST:event_okButtonMousePressed
 

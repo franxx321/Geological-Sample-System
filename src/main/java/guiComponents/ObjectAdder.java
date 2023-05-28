@@ -337,7 +337,7 @@ public class ObjectAdder extends javax.swing.JFrame {
             newObject.setDescription(this.oDescriptionField.getText());
             newObject.setrId(this.oPersonDNIField.getText());
             newObject.setqId(this.oQuadrantCodeField.getText());
-            ((LithicObject)newObject).setCreationDate(Date.valueOf(this.FechaC_ColorField.getText()));
+            ((LithicObject)newObject).setCreationYear(Integer.parseInt(this.FechaC_ColorField.getText()));
         }
         else{
             newObject= new CeramicObject();
@@ -360,6 +360,7 @@ public class ObjectAdder extends javax.swing.JFrame {
         catch (SQLException e){
             JFrame jFrame = new JFrame();
             JOptionPane.showMessageDialog(jFrame, "Ocurrio un error al intentar agregar un objeto.");
+            System.out.println("fallo"+ e.getMessage());
         }
     }//GEN-LAST:event_jButton1MousePressed
 

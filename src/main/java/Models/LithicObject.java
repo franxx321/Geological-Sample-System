@@ -3,14 +3,14 @@ package Models;
 import java.sql.Date;
 
 public class LithicObject extends ArcObject {
-    Date creationDate;
+    int creationYear;
 
-    public Date getCreationDate() {
-        return creationDate;
+    public int getCreationYear() {
+        return creationYear;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setCreationYear(int creationYear) {
+        this.creationYear = creationYear;
     }
 
     

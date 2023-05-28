@@ -163,6 +163,7 @@ public class BoxDeleter extends javax.swing.JFrame {
         }
         }catch(SQLException e){
             JOptionPane.showMessageDialog(jFrame, "Ocurrio un error al intentar borrar una caja..");
+            System.out.println("fallo" +e.getMessage());
         }
     }//GEN-LAST:event_confirmBottonMousePressed
 

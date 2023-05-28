@@ -18,7 +18,7 @@ public class ArcObjectHandler extends DBConnector {
     
     public void addObject(ArcObject newObject)throws SQLException{
         this.startConn();
-        this.setP_query(this.getConn().prepareStatement("INSERT INTO Objetos VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"));
+        this.setP_query(this.getConn().prepareStatement("INSERT INTO Objetos VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)"));
             this.getP_query().setString(1,newObject.getId());
             this.getP_query().setString(2, newObject.getName());
             this.getP_query().setString(3,newObject.getExtractionType());
@@ -33,13 +33,21 @@ public class ArcObjectHandler extends DBConnector {
             this.getP_query().setString(12, newObject.getqId());
             this.getP_query().setString(13,newObject.getbId());
             this.getP_query().setString(14,newObject.getrId());
+            String auxString;
+            if (newObject instanceof  LithicObject){
+                 auxString = "L";
+            }
+            else{
+                auxString= "C";
+            }
+            this.getP_query().setString(15,auxString);
             this.getP_query().executeUpdate();
             
             if(newObject instanceof LithicObject){
             LithicObject newLithicObject =(LithicObject)newObject;
             this.setP_query(this.getConn().prepareStatement("INSERT INTO Liticos VALUES(?,?)"));
             this.getP_query().setString(1, newLithicObject.getId());
-            this.getP_query().setDate(2,newLithicObject.getCreationDate());
+            this.getP_query().setInt(2,newLithicObject.getCreationYear());
             this.getP_query().executeUpdate();
             }
             else{
