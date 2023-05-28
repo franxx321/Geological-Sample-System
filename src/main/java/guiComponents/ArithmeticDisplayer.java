@@ -27,30 +27,34 @@ public class ArithmeticDisplayer extends javax.swing.JFrame {
     }
     
     public void display(List <Objects> atributes, ArithmeticResultGenerator arithmeticResultGenerator){
-        this.removeAll();
+        this.jPanel1.removeAll();
         List<Object> atr;
         atr=null;
         try{
         atr = arithmeticResultGenerator.generateResults();}
-        catch(SQLException e){}
-        if(arithmeticResultGenerator instanceof DBSRG){
-            this.add(this.dbaddedPanel);
-            amountOfPeopleResult.setText((String)atr.get(0));
-            amountOfCuadrantsResult.setText((String)atr.get(1));
-            amountOfObjectsResult.setText((String)atr.get(2));
-            amountOfBoxesResult.setText((String)atr.get(3));
-        }else if(arithmeticResultGenerator instanceof OTARG){
-            this.add(this.amountObjectsPanel);
-            ceramicObjectsResult.setText((String)atr.get(0));
-            lithicObjectsResult.setText((String)atr.get(1));
-        }else{
-            this.add(this.statisticsPanel);
-            averageResult.setText((String)atr.get(0));
-            minResult.setText((String)atr.get(1));
-            maxResult.setText((String)atr.get(2));
+        catch(SQLException e){
+            System.out.println("Fallo"+ e.getMessage());
         }
-        this.repaint();
-        this.revalidate();
+        if(arithmeticResultGenerator instanceof DBSRG){
+
+            this.jPanel1.add(this.dbaddedPanel);
+            amountOfPeopleResult.setText(Integer.toString((Integer)atr.get(0)));
+            amountOfCuadrantsResult.setText(Integer.toString((Integer)atr.get(1)));
+            amountOfObjectsResult.setText(Integer.toString((Integer)atr.get(2)));
+            amountOfBoxesResult.setText(Integer.toString((Integer)atr.get(3)));
+        }else if(arithmeticResultGenerator instanceof OTARG){
+            this.jPanel1.add(this.amountObjectsPanel);
+            ceramicObjectsResult.setText(Integer.toString((Integer)atr.get(0)));
+            lithicObjectsResult.setText(Integer.toString((Integer)atr.get(1)));
+        }else{
+
+            this.jPanel1.add(this.statisticsPanel);
+            averageResult.setText(Float.toString((Float)atr.get(0)));
+            minResult.setText(Float.toString((Float)atr.get(1)));
+            maxResult.setText(Float.toString((Float)atr.get(2)));
+        }
+        this.jPanel1.repaint();
+        this.jPanel1.revalidate();
     }
 
     /**

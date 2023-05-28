@@ -21,12 +21,13 @@ public class OTARG extends ArithmeticResultGenerator{
         int lit = this.getResult().getInt(1);
         ret.add(0,lit);
         this.setQuery(this.getConn().createStatement());
-        this.setResult(this.getQuery().executeQuery("SELECY COUNT(O_Cod) FROM Ceramicos"));
+        this.setResult(this.getQuery().executeQuery("SELECT COUNT(O_Cod) FROM Ceramicos"));
         this.getResult().next();
         int cer = this.getResult().getInt(1);
         ret.add(1, cer);
         this.getConn().close();}
         catch (SQLException e){
+
         }
         return ret;
     }

@@ -13,22 +13,22 @@ public class DBSRG extends ArithmeticResultGenerator {
     @Override
     public List<Object> generateResults() throws SQLException {
         String[] entities={"Personas","Cuadriculas","Objetos","Cajas"};
-        String[] ids={"P_Dni","Cu_Cod","O_Cod","Ca_Cood"};
-        String statement="SELECT COUNT(?) FROM ?";
+        String[] ids={"P_Dni","Cu_Cod","O_Cod","Ca_Cod"};
+        String statement="SELECT COUNT(P_Dni) FROM Personas";
         ArrayList <Object> ret = new ArrayList<>();
         try{
         this.startConn();
-        this.setP_query(this.getConn().prepareStatement(statement));
         for (int i=0;i<4;i++){
-            this.getP_query().setString(1,entities[i]);
-            this.getP_query().setString(2,ids[i]);
-            this.setResult(this.getP_query().executeQuery());
+            this.setQuery(this.getConn().createStatement());
+            String auxString = "COUNT("+ids[i]+")";
+            this.setResult(this.getQuery().executeQuery("SELECT " +auxString+ " FROM "+entities[i]));
             this.getResult().next();
             ret.add(i,this.getResult().getInt(1));
         }
         this.getConn().close();
         }
         catch(SQLException e){
+            System.out.println("fallo!" +e.getMessage());
         }
         return ret;
     }

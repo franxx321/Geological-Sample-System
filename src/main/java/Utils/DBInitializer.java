@@ -130,32 +130,32 @@ public class DBInitializer extends DBConnector {
                 this.getQuery().execute("INSERT INTO Personas  (P_Nombre ,P_Apellido,P_Email,P_Dni,P_Telefono ) " +
                         "VALUES('Rodolphe','Rominov','rrominov@sciencedaily.com',25544555,'7135986253')");
 
-                this.setQuery(this.getConn().createStatement());
+                /*this.setQuery(this.getConn().createStatement());
                 this.setResult(this.getQuery().executeQuery("SELECT P_Dni " +
                         "FROM Personas " +
                         "WHERE P_Nombre ='Benji' AND P_Apellido ='Colchett'"));
                 this.getResult().next();
                 String p_Dni = this.getResult().getString(1);
                 //TOASK dejamos esta opcion o no eliminamos al Benji este
-               /* this.setQuery(this.getConn().createStatement());
-                this.setResult(this.getQuery().executeQuery("SELECT O_Cod " +
+                this.setP_query(this.getConn().prepareStatement("SELECT O_Cod " +
                         "FROM Objetos " +
-                        "WHERE P_Dni_Ingresa = p_Dni"));
+                        "WHERE P_Dni_Ingresa = ?" ));
+                this.getP_query().setString(1,p_Dni);
+                this.setResult(this.getP_query().executeQuery());
                 while (this.getResult().next()){
                     this.setP_query(this.getConn().prepareStatement("DELETE FROM Objetos " +
                             "WHERE O_Cod = ?"));
                     this.getP_query().setString(1,this.getResult().getString(1));
-                }*/
+                    this.getP_query().executeUpdate();
+                }
                 this.setP_query(this.getConn().prepareStatement("DELETE FROM Personas " +
                         "WHERE P_Dni= ?"));
                 this.getP_query().setString(1, p_Dni);
-                this.getP_query().executeUpdate();
-
+                this.getP_query().executeUpdate();*/
             }
             this.getConn().close();
         } catch (SQLException e) {
             System.out.println("Falllo!" + e.getMessage());
-
         }
     }
 
