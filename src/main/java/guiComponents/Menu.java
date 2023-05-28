@@ -69,6 +69,7 @@ public class Menu extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         BackToMenu2 = new javax.swing.JButton();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -292,6 +293,13 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel14.setText("Consultar objetos encontrados entre dos fechas");
+        jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel14MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -310,11 +318,12 @@ public class Menu extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jLabel12)
                             .addComponent(jLabel13)
-                            .addComponent(BackToMenu2)))
+                            .addComponent(BackToMenu2)
+                            .addComponent(jLabel14)))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(333, 333, 333)
                         .addComponent(jLabel4)))
-                .addContainerGap(347, Short.MAX_VALUE))
+                .addContainerGap(426, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,12 +343,14 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel11)
+                .addComponent(jLabel14)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel12)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addComponent(BackToMenu2)
                 .addGap(34, 34, 34))
         );
@@ -467,6 +478,11 @@ public class Menu extends javax.swing.JFrame {
         this.guiHandler.changeFrame(GUIHandler.OiBTP);
     }//GEN-LAST:event_jLabel7MousePressed
 
+    private void jLabel14MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MousePressed
+        this.guiHandler.changeFrame(GUIHandler.DOTP);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel14MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -513,6 +529,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
