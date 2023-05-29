@@ -84,15 +84,10 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                              <Component id="amountOfPeopleResult" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                              <Component id="amountOfPeopleT" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="amountOfPeopleResult" min="-2" max="-2" attributes="0"/>
+                          <Component id="amountOfPeopleT" alignment="1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -117,65 +112,41 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="amountOfPeopleT">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de Personas:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfCuadrantT">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de Cuadriculas:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfObjectsT">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de Objetos:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfBoxesT">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Cantidad de Cajas:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfPeopleResult">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel5"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfCuadrantsResult">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel6"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfObjectsResult">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel7"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="amountOfBoxesResult">
               <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel8"/>
               </Properties>
             </Component>
@@ -387,9 +358,6 @@
       <SubComponents>
         <Component class="javax.swing.JButton" name="BackToMenuButton3">
           <Properties>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="Volver al Menu"/>
           </Properties>
           <Events>

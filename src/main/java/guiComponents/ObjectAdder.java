@@ -88,37 +88,26 @@ public class ObjectAdder extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese los campos requeridos");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Codigo de Objeto");
 
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre de Objeto");
 
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Alto");
 
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Largo");
 
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Espesor");
 
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Peso");
 
-        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Tipo de Extraccion");
 
-        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Cantidad");
 
-        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Fecha de registro");
 
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Descripcion");
 
         oCodeField.addActionListener(new java.awt.event.ActionListener() {
@@ -127,16 +116,12 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Codigo de Cuadricula");
 
-        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("DNI Persona");
 
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Codigo de Caja");
 
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Confirmar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -149,10 +134,8 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
-        tipoLabel.setForeground(new java.awt.Color(0, 0, 0));
         tipoLabel.setText("Tipo ");
 
-        tipoComboBox.setForeground(new java.awt.Color(255, 255, 255));
         tipoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Litico", "Ceramico" }));
         tipoComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -160,7 +143,6 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
-        fechaC_ColorLabel.setForeground(new java.awt.Color(0, 0, 0));
         fechaC_ColorLabel.setText("Fecha Creacion");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -204,11 +186,11 @@ public class ObjectAdder extends javax.swing.JFrame {
                             .addComponent(fechaC_ColorLabel))
                         .addGap(34, 34, 34)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(oBoxCodeField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(oBoxCodeField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(oPersonDNIField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(oQuadrantCodeField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
-                            .addComponent(FechaC_ColorField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(FechaC_ColorField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(tipoComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(219, Short.MAX_VALUE))
         );
@@ -274,7 +256,6 @@ public class ObjectAdder extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
 
-        BackToMenuButton4.setForeground(new java.awt.Color(255, 255, 255));
         BackToMenuButton4.setText("Volver al Menu");
         BackToMenuButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {

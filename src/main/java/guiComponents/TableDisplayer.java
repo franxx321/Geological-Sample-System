@@ -76,7 +76,6 @@ public class TableDisplayer extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(table);
 
-        titlelabel.setForeground(new java.awt.Color(0, 0, 0));
         titlelabel.setText("Title");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -104,7 +103,6 @@ public class TableDisplayer extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
 
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Volver al Menu");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {

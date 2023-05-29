@@ -49,7 +49,6 @@ public class DOTP extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(102, 0, 204));
 
-        BackToMenuButton2.setForeground(new java.awt.Color(255, 255, 255));
         BackToMenuButton2.setText("Volver al Menu");
         BackToMenuButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -81,10 +80,8 @@ public class DOTP extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese fecha inicial:");
 
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Ingrese fecha final:");
 
         initialDateField.addActionListener(new java.awt.event.ActionListener() {
@@ -93,7 +90,6 @@ public class DOTP extends javax.swing.JFrame {
             }
         });
 
-        okButton.setForeground(new java.awt.Color(255, 255, 255));
         okButton.setText("Confirmar");
         okButton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -105,7 +101,6 @@ public class DOTP extends javax.swing.JFrame {
         jLabel3.setText("*Formato de fecha aaaa-mm-dd");
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Busqueda por fecha");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);

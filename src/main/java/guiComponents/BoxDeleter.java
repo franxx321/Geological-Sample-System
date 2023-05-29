@@ -49,7 +49,6 @@ public class BoxDeleter extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         deleaterTitle.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        deleaterTitle.setForeground(new java.awt.Color(0, 0, 0));
         deleaterTitle.setText("Ingrese el codigo de la caja que desea eliminar:");
 
         codDeleater.addActionListener(new java.awt.event.ActionListener() {
@@ -58,7 +57,6 @@ public class BoxDeleter extends javax.swing.JFrame {
             }
         });
 
-        confirmBotton.setForeground(new java.awt.Color(255, 255, 255));
         confirmBotton.setText("Confirmar");
         confirmBotton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -98,7 +96,6 @@ public class BoxDeleter extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
 
-        backToMenuBotton.setForeground(new java.awt.Color(255, 255, 255));
         backToMenuBotton.setText("Volver al menu");
         backToMenuBotton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
