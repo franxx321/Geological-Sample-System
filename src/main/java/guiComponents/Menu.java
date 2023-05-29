@@ -93,10 +93,13 @@ public class Menu extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Bienvenido al sistema del departamento de arqueologia");
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Por favor eliga una opcion:");
 
+        operationsBotton.setForeground(new java.awt.Color(255, 255, 255));
         operationsBotton.setText("Operaciones");
         operationsBotton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -109,6 +112,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        consultaBotton.setForeground(new java.awt.Color(255, 255, 255));
         consultaBotton.setText("Consultas");
         consultaBotton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -128,11 +132,11 @@ public class Menu extends javax.swing.JFrame {
                         .addComponent(operationsBotton)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(consultaBotton)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(622, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(235, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addGap(231, 231, 231))
+                .addGap(264, 264, 264))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -145,13 +149,14 @@ public class Menu extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(operationsBotton)
                     .addComponent(consultaBotton))
-                .addContainerGap(394, Short.MAX_VALUE))
+                .addContainerGap(401, Short.MAX_VALUE))
         );
 
         jPanel1.add(jPanel3, "card2");
 
         jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
+        deleteBotton.setForeground(new java.awt.Color(255, 255, 255));
         deleteBotton.setText("Eliminar Cajas");
         deleteBotton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -164,6 +169,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        addBotton.setForeground(new java.awt.Color(255, 255, 255));
         addBotton.setText("Agregar Objetos");
         addBotton.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -171,8 +177,10 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Elija una operacion:");
 
+        BackToMenu1.setForeground(new java.awt.Color(255, 255, 255));
         BackToMenu1.setText("Volver al Menu");
         BackToMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -222,8 +230,10 @@ public class Menu extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Elija una consulta");
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Consultar cajas");
         jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -231,6 +241,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Consultar personas");
         jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -238,6 +249,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Consultar los objetos en una caja");
         jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -245,6 +257,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Consultar cajas vacias");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -252,6 +265,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Consultar cantidad de objetos hallados por cada arqueologo");
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -259,6 +273,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Consultar el peso de cada caja");
         jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -266,6 +281,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Consultar estadisticas del peso de los objetos");
         jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -273,6 +289,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Consultar cantidad de objetos liticos y ceramicos");
         jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -280,6 +297,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Consultar estadisticas del sistema");
         jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -287,6 +305,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        BackToMenu2.setForeground(new java.awt.Color(255, 255, 255));
         BackToMenu2.setText("Volver al menu");
         BackToMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -294,6 +313,7 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Consultar objetos encontrados entre dos fechas");
         jLabel14.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {

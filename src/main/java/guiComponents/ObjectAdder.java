@@ -88,26 +88,37 @@ public class ObjectAdder extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Ingrese los campos requeridos");
 
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Codigo de Objeto");
 
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre de Objeto");
 
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Alto");
 
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Largo");
 
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Espesor");
 
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Peso");
 
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Tipo de Extraccion");
 
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Cantidad");
 
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
         jLabel10.setText("Fecha de registro");
 
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Descripcion");
 
         oCodeField.addActionListener(new java.awt.event.ActionListener() {
@@ -116,12 +127,16 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Codigo de Cuadricula");
 
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("DNI Persona");
 
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Codigo de Caja");
 
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Confirmar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -134,8 +149,10 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
+        tipoLabel.setForeground(new java.awt.Color(0, 0, 0));
         tipoLabel.setText("Tipo ");
 
+        tipoComboBox.setForeground(new java.awt.Color(255, 255, 255));
         tipoComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Litico", "Ceramico" }));
         tipoComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,6 +160,7 @@ public class ObjectAdder extends javax.swing.JFrame {
             }
         });
 
+        fechaC_ColorLabel.setForeground(new java.awt.Color(0, 0, 0));
         fechaC_ColorLabel.setText("Fecha Creacion");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -185,15 +203,13 @@ public class ObjectAdder extends javax.swing.JFrame {
                             .addComponent(jLabel14)
                             .addComponent(fechaC_ColorLabel))
                         .addGap(34, 34, 34)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(tipoComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(oBoxCodeField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
-                                    .addComponent(oPersonDNIField, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(oQuadrantCodeField, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(oBoxCodeField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(oPersonDNIField, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(oQuadrantCodeField, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton1)
-                            .addComponent(FechaC_ColorField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(FechaC_ColorField, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 97, Short.MAX_VALUE)
+                            .addComponent(tipoComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap(219, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -258,6 +274,7 @@ public class ObjectAdder extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(102, 0, 204));
 
+        BackToMenuButton4.setForeground(new java.awt.Color(255, 255, 255));
         BackToMenuButton4.setText("Volver al Menu");
         BackToMenuButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -304,10 +321,6 @@ public class ObjectAdder extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_oCodeFieldActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void tipoComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tipoComboBoxActionPerformed
         // TODO add your handling code here:
         if (((String)tipoComboBox.getSelectedItem()).equals("Litico")){
@@ -318,44 +331,52 @@ public class ObjectAdder extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_tipoComboBoxActionPerformed
 
+    private void BackToMenuButton4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToMenuButton4MousePressed
+        this.guihandler.changeFrame(GUIHandler.menu);
+    }//GEN-LAST:event_BackToMenuButton4MousePressed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void jButton1MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MousePressed
         // TODO add your handling code here:
         try{
-         ArcObject newObject;
-        
-        if (((String)tipoComboBox.getSelectedItem()).equals("Litico")){
-            newObject= new LithicObject();
-            newObject.setId(this.oCodeField.getText());
-            newObject.setName(this.oNameField.getText());
-            newObject.setLenght(Float.parseFloat(this.oLenghtField.getText()));
-            newObject.setHeight(Float.parseFloat(this.oHeightField.getText()));
-            newObject.setWitdth(Float.parseFloat(this.oWidthField.getText()));
-            newObject.setWeight(Float.parseFloat(this.oWidthField.getText()));
-            newObject.setExtractionType(this.oExtractionField.getText());
-            newObject.setAmount(Integer.parseInt(this.oAmountField.getText()));
-            newObject.setDateFound(Date.valueOf(this.oDateFoundField.getText()));
-            newObject.setDescription(this.oDescriptionField.getText());
-            newObject.setrId(this.oPersonDNIField.getText());
-            newObject.setqId(this.oQuadrantCodeField.getText());
-            ((LithicObject)newObject).setCreationYear(Integer.parseInt(this.FechaC_ColorField.getText()));
-        }
-        else{
-            newObject= new CeramicObject();
-            newObject.setId(this.oCodeField.getText());
-            newObject.setName(this.oNameField.getText());
-            newObject.setLenght(Float.parseFloat(this.oLenghtField.getText()));
-            newObject.setHeight(Float.parseFloat(this.oHeightField.getText()));
-            newObject.setWitdth(Float.parseFloat(this.oWidthField.getText()));
-            newObject.setWeight(Float.parseFloat(this.oWidthField.getText()));
-            newObject.setExtractionType(this.oExtractionField.getText());
-            newObject.setAmount(Integer.parseInt(this.oAmountField.getText()));
-            newObject.setDateFound(Date.valueOf(this.oDateFoundField.getText()));
-            newObject.setDescription(this.oDescriptionField.getText());
-            newObject.setrId(this.oPersonDNIField.getText());
-            newObject.setqId(this.oQuadrantCodeField.getText());
-            ((CeramicObject)newObject).setColor(this.FechaC_ColorField.getText());            
-        }
-        this.objectHandler.addObject(newObject);
+            ArcObject newObject;
+
+            if (((String)tipoComboBox.getSelectedItem()).equals("Litico")){
+                newObject= new LithicObject();
+                newObject.setId(this.oCodeField.getText());
+                newObject.setName(this.oNameField.getText());
+                newObject.setLenght(Float.parseFloat(this.oLenghtField.getText()));
+                newObject.setHeight(Float.parseFloat(this.oHeightField.getText()));
+                newObject.setWitdth(Float.parseFloat(this.oWidthField.getText()));
+                newObject.setWeight(Float.parseFloat(this.oWidthField.getText()));
+                newObject.setExtractionType(this.oExtractionField.getText());
+                newObject.setAmount(Integer.parseInt(this.oAmountField.getText()));
+                newObject.setDateFound(Date.valueOf(this.oDateFoundField.getText()));
+                newObject.setDescription(this.oDescriptionField.getText());
+                newObject.setrId(this.oPersonDNIField.getText());
+                newObject.setqId(this.oQuadrantCodeField.getText());
+                ((LithicObject)newObject).setCreationYear(Integer.parseInt(this.FechaC_ColorField.getText()));
+            }
+            else{
+                newObject= new CeramicObject();
+                newObject.setId(this.oCodeField.getText());
+                newObject.setName(this.oNameField.getText());
+                newObject.setLenght(Float.parseFloat(this.oLenghtField.getText()));
+                newObject.setHeight(Float.parseFloat(this.oHeightField.getText()));
+                newObject.setWitdth(Float.parseFloat(this.oWidthField.getText()));
+                newObject.setWeight(Float.parseFloat(this.oWidthField.getText()));
+                newObject.setExtractionType(this.oExtractionField.getText());
+                newObject.setAmount(Integer.parseInt(this.oAmountField.getText()));
+                newObject.setDateFound(Date.valueOf(this.oDateFoundField.getText()));
+                newObject.setDescription(this.oDescriptionField.getText());
+                newObject.setrId(this.oPersonDNIField.getText());
+                newObject.setqId(this.oQuadrantCodeField.getText());
+                ((CeramicObject)newObject).setColor(this.FechaC_ColorField.getText());
+            }
+            this.objectHandler.addObject(newObject);
         }
         catch (SQLException e){
             JFrame jFrame = new JFrame();
@@ -363,10 +384,6 @@ public class ObjectAdder extends javax.swing.JFrame {
             System.out.println("fallo"+ e.getMessage());
         }
     }//GEN-LAST:event_jButton1MousePressed
-
-    private void BackToMenuButton4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BackToMenuButton4MousePressed
-        this.guihandler.changeFrame(GUIHandler.menu);
-    }//GEN-LAST:event_BackToMenuButton4MousePressed
 
     /**
      * @param args the command line arguments
