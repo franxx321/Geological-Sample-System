@@ -30,6 +30,7 @@ public class Menu extends javax.swing.JFrame {
      * Creates new form Menu
      */
     public Menu() {
+        int a;
         initComponents();
         this.dbInitializer= new DBInitializer();
             this.dbInitializer.initializeDB();
